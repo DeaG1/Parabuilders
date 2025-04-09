@@ -11,6 +11,7 @@ const navLinks = [
 
 export default function Navbar() {
   return (
+    <>
     <nav className="bg-[#01121a] w-full py-4">
       <div className="w-full flex justify-between items-center px-32">
         <div className="flex items-center">
@@ -42,5 +43,7 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
+    <div className="w-full h-[1px] bg-sky-800" />
+    </>
   );
 }
