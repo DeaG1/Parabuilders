@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+
 const inter = Inter({
     variable: "--font-inter",
     subsets: ["latin"],
@@ -12,6 +13,9 @@ const inter = Inter({
 export const metadata: Metadata = {
     title: "Parabuilders",
     description: "The best community",
+    icons:{
+        icon: "/favicon.png",
+    },
 };
 
 export default function RootLayout({

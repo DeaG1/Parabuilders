@@ -36,7 +36,7 @@ export default function Navbar() {
           <div className="h-6 border-r border-gray-500" />
           <div className="relative flex items-center justify-center">
             <div className="absolute top-1 left-0 right-0 h-full bg-orange-500 rounded-full z-0 scale-y-125" />
-            <button className="relative px-5 py-2 text-sm font-medium text-black bg-white border-2 border-orange-500 rounded-full z-10 hover:bg-orange-500 hover:text-white transition-all">
+            <button className="relative px-5 py-2 text-sm font-medium text-black bg-white border-1 border-orange-500 rounded-full z-10 hover:bg-orange-500 hover:text-white transition-all">
               Social codorna
             </button>
           </div>
