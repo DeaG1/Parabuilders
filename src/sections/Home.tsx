@@ -44,11 +44,11 @@ export default function Home() {
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation
         </p>
-        <div className="relative flex items-center justify-center absolute bottom-2">
-          <div className="absolute top-1 left-0 right-0 h-full bg-orange-500 rounded-full z-0 scale-y-125" />
-          <button className="relative px-6 py-2 text-base font-medium text-black bg-white border-1 border-orange-500 rounded-full z-10 hover:bg-orange-500 hover:text-white transition-all">
-            Call to action
-          </button>
+        <div className="relative inline-block">
+        <div className="absolute top-1 left-1 w-full h-full bg-orange-500 rounded-full z-0" />
+            <button className="relative px-6 py-2 text-base font-medium text-black bg-[#FFFFFF] rounded-full z-10">
+                Call to action
+            </button>
         </div>
       </div>
     </section>
