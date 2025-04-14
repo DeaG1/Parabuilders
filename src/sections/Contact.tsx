@@ -1,12 +1,15 @@
+const title = "Get in touch with our team and discover how we can help your project thrive!";
+const subtitle = "Contact with us";
+
 export default function Contact() {
     return (
       <section className="bg-[#031F30] py-24 px-6 flex justify-center">
         <div className="w-full max-w-4xl text-center">
-          <span className="text-sm text-[#A45D35] bg-[#341F16] px-5 py-1 rounded-full tracking-wide">
-            Contact with us
+          <span className="text-[19px] text-[#A45D35] bg-[#341F16] px-5 py-1 rounded-full tracking-wide">
+            {subtitle}
           </span>
-          <h2 className="text-white text-4xl font-bold mt-4 mb-12">
-            Write a message
+          <h2 className="text-white text-[36px] font-bold mt-4 mb-12">
+            {title}
           </h2>
           <form className="flex flex-col items-center gap-6">
             <div className="w-full flex flex-col md:flex-row gap-6">
