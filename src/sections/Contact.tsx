@@ -5,7 +5,7 @@ export default function Contact() {
     return (
       <section className="bg-[#031F30] py-24 px-6 flex justify-center">
         <div className="w-full max-w-4xl text-center">
-          <span className="text-[19px] text-[#A45D35] bg-[#341F16] px-5 py-1 rounded-full tracking-wide">
+          <span className="text-[19px] text-[#FF5800] bg-[#341F16] px-5 py-1 rounded-full tracking-wide">
             {subtitle}
           </span>
           <h2 className="text-white text-[36px] font-bold mt-4 mb-12">

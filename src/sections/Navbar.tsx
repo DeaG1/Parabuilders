@@ -28,7 +28,7 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="group relative text-white/50 text-base transition-colors duration-300 hover:text-white"
+                  className="group relative text-white/50 text-[22px] transition-colors duration-300 hover:text-white"
                 >
                   {link.label}
                   <span

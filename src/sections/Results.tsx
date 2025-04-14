@@ -7,41 +7,39 @@ import exampleBird2 from "@/assets/images/servicesBird2.png";
 import exampleBird3 from "@/assets/images/servicesBird3.png";
 
 const title = {
-  title: ["ParaBuilders", "Mais do que uma comunidade de", "criadores de conteúdo."]
+  title: ["ParaBuilders", "More than just a community of", "content creators."]
 };
 
 const cards = [
   {
     type: "text",
-    title: "24+",
-    description: "Colocar infográficos de resultados dos creators.",
-  },
-  {
-    type: "image-single",
-    image: bird,  
-    label: "Call to action",
-    description: "Creator em destaque com maior performance.",
-  },
-  {
-    type: "image-multiple",
-    images: [exampleBird1, exampleBird2, exampleBird3],
-    description: "Top creators do mês com maior engajamento.",
+    title: "+1 Milion",
+    description: "Of views and an average of +1000 views per tweet.",
   },
   {
     type: "text",
-    title: "10K+",
-    description: "Engajamento total em posts no último mês.",
+    title: "+150 Creators",
+    description: "Unique creators",
   },
   {
-    type: "image-single",
-    image: bird,
-    label: "Nova campanha",
-    description: "Criadores participando de campanhas exclusivas.",
+    type: "text",
+    title: "+15 Thousand",
+    description: "Likes",
   },
   {
-    type: "image-multiple",
-    images: [exampleBird1, exampleBird2, exampleBird3],
-    description: "Time criativo colaborando em novos projetos.",
+    type: "text",
+    title: "+1 Thousand",
+    description: "Tweets total",
+  },
+  {
+    type: "text",
+    title: "+15 Thousand",
+    description: "Retweets",
+  },
+  {
+    type: "text",
+    title: "+5 Thousand",
+    description: "Replies",
   },
 ];
 

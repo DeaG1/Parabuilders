@@ -31,12 +31,12 @@
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-20%);
+    transform: translateX(-25%);
   }
 }
 
 .animate-slide {
-  animation: slide 20s linear infinite;
+  animation: slide 60s linear infinite;
   will-change: transform;
 }
 

@@ -49,7 +49,7 @@ export default function Services() {
   return (
     <section className="py-16 px-40 bg-[#031F30]">
       <h2 className="text-[58px] font-bold text-white text-center mb-16">
-        Serviços
+        Services
       </h2>
       <div className="flex flex-col gap-12 max-w-screen-xl mx-auto">
         {services.map((service, index) => {
