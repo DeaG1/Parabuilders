@@ -47,14 +47,14 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-16 px-40 bg-[#022235]">
+    <section className="py-16 px-40 bg-[#031F30]">
       <h2 className="text-5xl font-bold text-white text-center mb-16">
         Serviços
       </h2>
       <div className="flex flex-col gap-12 max-w-screen-xl mx-auto">
         {services.map((service, index) => {
           const isLeft = service.align === "left";
-          
+
           return (
             <div
               key={index}

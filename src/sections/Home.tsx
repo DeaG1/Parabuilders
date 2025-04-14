@@ -16,10 +16,11 @@ export default function Home() {
         </div>
       </div>
       <div className="absolute bottom-0 left-1 w-[130px] md:w-[180px] z-10">
-        <Image 
-         src={rectangle}
-         alt="Rectangle"
-         className="w-full h-auto" />
+        <Image
+          src={rectangle}
+          alt="Rectangle"
+          className="w-full h-auto"
+        />
       </div>
       <div className="absolute bottom-0 right-0 z-0">
         <Image
@@ -29,10 +30,12 @@ export default function Home() {
         />
       </div>
       <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[400px] h-[560px] md:w-[1230px] z-0">
-        <Image src={factory} 
-        alt="Factory with codorna"/>
+        <Image
+          src={factory}
+          alt="Factory with codorna"
+        />
       </div>
-      <div className="relative z-20 max-w-7xl mx-auto flex flex-col items-center text-center pt-24 px-4">
+      <div className="relative z-20 max-w-7xl mx-auto flex flex-col items-center text-center pt-20 px-4">
         <p className="text-sm text-white/60 mb-2">
           Neque porro quisquam est qui dolorem ipsum quia
         </p>
@@ -41,15 +44,20 @@ export default function Home() {
         </h1>
         <p className="max-w-2xl text-white/70 mb-8">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation
         </p>
-        <div className="relative inline-block">
-        <div className="absolute top-1 left-1 w-full h-full bg-orange-500 rounded-full z-0" />
-            <button className="relative px-6 py-2 text-base font-medium text-black bg-[#FFFFFF] rounded-full z-10">
-                Call to action
-            </button>
-        </div>
+
+        <button
+          type="button"
+          className="mt-4 px-8 py-3 bg-white text-black font-semibold rounded-full 
+                     border border-[#FF5800] 
+                     shadow-[0_7px_0_0_#FF5800] 
+                     active:translate-y-[2px] 
+                     transition-all"
+        >
+          Send a message
+        </button>
       </div>
     </section>
   );

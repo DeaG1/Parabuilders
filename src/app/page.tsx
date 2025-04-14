@@ -3,6 +3,7 @@ import Home from "@/sections/Home";
 import Results from "@/sections/Results";
 import Carousel from "@/sections/Carousel";
 import Services from "@/sections/Services";
+import Contact from "@/sections/Contact";
 
 export default function Parabuilders() {
     return (
@@ -12,6 +13,7 @@ export default function Parabuilders() {
             <Results />
             <Carousel />
             <Services />
+            <Contact />
         </>
     );
 }
