@@ -6,6 +6,10 @@ import exampleBird1 from "@/assets/images/servicesBird1.png";
 import exampleBird2 from "@/assets/images/servicesBird2.png";
 import exampleBird3 from "@/assets/images/servicesBird3.png";
 
+const title = {
+  title: ["ParaBuilders", "Mais do que uma comunidade de", "criadores de conteúdo."]
+};
+
 const cards = [
   {
     type: "text",
@@ -14,7 +18,7 @@ const cards = [
   },
   {
     type: "image-single",
-    image: bird,
+    image: bird,  
     label: "Call to action",
     description: "Creator em destaque com maior performance.",
   },
@@ -47,7 +51,6 @@ export default function Results() {
       <div className="absolute left-0 top-[0%] z-0">
         <Image src={hand} alt="Hand" className="w-[120px] md:w-[300px]" />
       </div>
-
       <div className="absolute right-5 top-[5%] z-0">
         <Image
           src={whiteFootPrints}
@@ -55,13 +58,13 @@ export default function Results() {
           className="w-[150px] md:w-[270px]"
         />
       </div>
-
-      <div className="relative z-10 text-center px-4 flex flex-col items-center gap-2 md:gap-3 text-2xl md:text-5xl font-bold">
-        <h2>ParaBuilders</h2>
-        <p>Mais do que uma comunidade de</p>
-        <p>criadores de conteúdo.</p>
+      <div className="relative z-10 text-center px-4 flex flex-col items-center gap-2 md:gap-3">
+        {title.title.map((line, i) => (
+          <p key={i} className="text-2xl md:text-5xl font-bold text-white">
+            {line}
+          </p>
+        ))}
       </div>
-
       <div className="relative z-10 mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-4 sm:px-8 lg:px-16 max-w-[1400px] mx-auto">
         {cards.map((card, index) => (
           <div key={index} className="relative w-full">
@@ -75,7 +78,6 @@ export default function Results() {
                   </p>
                 </>
               )}
-
               {card.type === "image-single" && card.image && (
                 <>
                   <div className="flex items-center gap-4 mb-4">
@@ -94,7 +96,6 @@ export default function Results() {
                   </p>
                 </>
               )}
-
               {card.type === "image-multiple" && Array.isArray(card.images) && (
                 <>
                   <div className="flex items-center gap-3 mb-4">

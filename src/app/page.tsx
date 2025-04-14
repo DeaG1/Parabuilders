@@ -4,6 +4,8 @@ import Results from "@/sections/Results";
 import Carousel from "@/sections/Carousel";
 import Services from "@/sections/Services";
 import Contact from "@/sections/Contact";
+import Discord from "@/sections/Discord";
+import Footer from "@/sections/Footer";
 
 export default function Parabuilders() {
     return (
@@ -14,6 +16,8 @@ export default function Parabuilders() {
             <Carousel />
             <Services />
             <Contact />
+            <Discord />
+            <Footer />
         </>
     );
 }

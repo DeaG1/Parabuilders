@@ -28,7 +28,7 @@ export default function Contact() {
             />
             <button
             type="submit"
-            className="mt-4 px-8 py-3 bg-white text-black font-semibold rounded-full 
+            className="mt-4 px-8 py-3 bg-white text-black text-[22px] font-semibold rounded-full 
              border border-[#FF5800] 
              shadow-[0_7px_0_0_#FF5800]
              active:translate-y-[2px]"

@@ -40,7 +40,7 @@ const services = [
     bgText: "bg-[#113255]",
     border: "border-[#A0D4F7]",
     image: blueBird,
-    align: "right",
+    align: "right", 
     bgImage: "bg-[#92C6F8]",
   },
 ];

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import logo from '@/assets/images/logoWithName.png';
 import Link from 'next/link';
 
+const buttonText = "Social codorna";
 const navLinks = [
   { label: 'Home', href: '#' },
   { label: 'Results', href: '#' },
@@ -46,7 +47,7 @@ export default function Navbar() {
                          active:translate-y-[2px] 
                          transition-all"
             >
-              Social codorna
+              {buttonText}
             </button>
           </div>
         </div>
