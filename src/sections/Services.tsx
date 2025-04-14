@@ -14,7 +14,6 @@ const services = [
     border: "border-[#FF78AD]",
     image: pinkBird,
     align: "left",
-    bgImage: "bg-[#F883B9]",
   },
   {
     title: "KOL Manager",
@@ -23,7 +22,6 @@ const services = [
     border: "border-[#FEE191]",
     image: yellowBird,
     align: "right",
-    bgImage: "bg-[#F8DE90]",
   },
   {
     title: "Ambassador Program",
@@ -32,16 +30,14 @@ const services = [
     border: "border-[#B2EFA8]",
     image: greenBird,
     align: "left",
-    bgImage: "bg-[#7EF191]",
   },
   {
-    title: "KOL Metrics Tools ",
+    title: "KOL Metrics Tools",
     text: "Gain in-depth insights into campaigns and KOL performance with our exclusive dashboard for optimized results.",
     bgText: "bg-[#113255]",
     border: "border-[#A0D4F7]",
     image: blueBird,
-    align: "right", 
-    bgImage: "bg-[#92C6F8]",
+    align: "right",
   },
 ];
 
@@ -61,21 +57,25 @@ export default function Services() {
               className={`px-4 ${isLeft ? "mr-auto" : "ml-auto"}`}
             >
               <div
-                className={`flex h-[250px] w-[770px] items-center overflow-hidden rounded-xl border-2 ${service.border} ${service.bgText} ${
+                className={`flex items-stretch overflow-hidden border-2 ${service.border} ${service.bgText} ${
                   isLeft ? "flex-row" : "flex-row-reverse"
-                }`}
+                } rounded-2xl`}
+                style={{ width: "770px", height: "250px" }}
               >
                 <div
-                  className={`w-[300px] h-full relative shrink-0 ${service.bgImage}`}
+                  className={`relative w-[300px] overflow-hidden ${
+                    isLeft ? "rounded-l-xl" : "rounded-r-xl"
+                  }`}
                 >
                   <Image
                     src={service.image}
                     alt={service.title}
-                    fill
-                    className="object-contain"
+                    width={300}
+                    height={250}
+                    className="object-cover w-full h-full"
                   />
                 </div>
-                <div className="flex-1 h-full flex flex-col justify-center p-6 max-w-[400px]">
+                <div className="flex-1 flex flex-col justify-center p-6 max-w-[470px]">
                   <div className="flex items-center gap-2 mb-4">
                     <div className="w-3 h-3 bg-orange-400 rounded-full" />
                     <h3 className="text-white text-[30px] font-semibold">
@@ -84,7 +84,9 @@ export default function Services() {
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="w-2 bg-orange-400 h-full" />
-                    <p className="text-white text-[20px] max-w-[420px] leading-tight">{service.text}</p>
+                    <p className="text-white text-[20px] leading-tight">
+                      {service.text}
+                    </p>
                   </div>
                 </div>
               </div>
