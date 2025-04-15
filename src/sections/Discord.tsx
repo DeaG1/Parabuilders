@@ -32,7 +32,7 @@ export default function Discord() {
             <p className="text-white/80 text-[20px] mb-6">{subtitle}</p>
             <button
               type="button"
-              className="px-24 py-3 text-[30px] font-medium text-black bg-white 
+              className="mt-2 w-[333px] h-[71px] text-[30px] font-medium text-black bg-white 
                          rounded-full border border-[#FF5800] 
                          shadow-[0_6px_0_0_#FF5800] 
                          active:translate-y-[2px] 
