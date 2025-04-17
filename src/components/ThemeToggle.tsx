@@ -8,7 +8,7 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
-    const initialTheme = savedTheme || "light";
+    const initialTheme = savedTheme || "dark";
     document.documentElement.classList.remove("light", "dark");
     document.documentElement.classList.add(initialTheme);
     setTheme(initialTheme);

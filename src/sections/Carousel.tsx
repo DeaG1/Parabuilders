@@ -5,7 +5,7 @@ const logos = [
   {
     alt: "Meta Pool",
     bw: "/metapoolColorlessLogo.png",
-    color: "/metapoolLogo.png",
+    color: "/metapoolLogoWithColor.png",
     width: 182.8,
     height: 22,
     offsetY: 10,
@@ -28,7 +28,7 @@ const logos = [
   {
     alt: "BitMart",
     bw: "/bitmartColorlessLogo.png",
-    color: "/bitmartLogo.png",
+    color: "/bitmartLogoWithColor.png",
     width: 150.2,
     height: 38.1,
     offsetY: 1,
