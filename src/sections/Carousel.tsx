@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const logos = [
@@ -68,25 +69,34 @@ const logos = [
 ];
 
 export default function Carousel() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const root = document.documentElement;
+
+    const updateTheme = () => {
+      setIsDarkMode(root.classList.contains("dark"));
+    };
+
+    updateTheme();
+
+    const observer = new MutationObserver(updateTheme);
+    observer.observe(root, { attributes: true, attributeFilter: ["class"] });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const backgroundStyle = isDarkMode
+  ? "linear-gradient(to right, #3A78A3 0%, #064A7C 50%, #3A78A3 100%)"
+  : "linear-gradient(to right, #3A78A3 0%, #064A7C 50%, #3A78A3 100%)";
+
   return (
     <div
       className="relative w-full overflow-hidden py-12"
       style={{
-        background: "linear-gradient(to right, var(--color-background), var(--color-primary), var(--color-background))",
+        background: backgroundStyle,
       }}
     >
-      <div
-        className="pointer-events-none absolute left-0 top-0 h-full w-20 z-10"
-        style={{
-          background: "linear-gradient(to right, var(--color-background), transparent)",
-        }}
-      />
-      <div
-        className="pointer-events-none absolute right-0 top-0 h-full w-20 z-10"
-        style={{
-          background: "linear-gradient(to left, var(--color-background), transparent)",
-        }}
-      />
       <div className="flex w-max animate-slide gap-16 px-8">
         {Array.from({ length: 10 }).flatMap(() =>
           logos.map((logo, index) => (

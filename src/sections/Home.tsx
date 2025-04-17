@@ -1,9 +1,10 @@
 "use client";
 import Image from "next/image";
 import rectangle from "@/assets/images/rectangle.png";
-import rectangleWithHelmet from "@/assets/images/rectangleWithHelmet.png";
-import rectangleWith2Helmet from "@/assets/images/rectangleWith2Helmet.png";
+import rectangleFromRight from "@/assets/images/rectangleFromRight.png";
+import rectangleFromLeft from "@/assets/images/rectangleFromLeft.png";
 import factory from "@/assets/images/factory.png";
+import helmet from "@/assets/images/helmet.gif";
 
 const subtitle = "Real voices mean Real traction";
 const title = "YOUR WEB3 DESERVES MORE THAN HYPE,<br/> WE BRING QUALITY";
@@ -16,12 +17,18 @@ export default function Home() {
     <section className="home-gradient relative w-full text-[var(--color-text)] overflow-hidden min-h-[930px]">
       <div className="absolute bottom-[380px] left-[-70px] w-[207.32px] h-[415px] z-0">
         <Image
-          src={rectangleWithHelmet}
-          alt="Rectangle with helmet left"
+          src={rectangleFromRight}
+          alt="Rectangle from Right"
           width={207.32}
           height={415}
           className="object-contain w-full h-full"
         />
+        <div className="absolute top-[25px] left-[80px] w-[45px] h-[45px] z-10">
+          <Image src={helmet} alt="Helmet" width={45} height={45} />
+        </div>
+        <div className="absolute top-[-30px] right-[45px] w-[45px] h-[45px] z-10">
+          <Image src={helmet} alt="Helmet" width={45} height={45} />
+        </div>
       </div>
       <div className="absolute bottom-[190px] left-[-50px] w-[211px] h-[279.32px] z-10">
         <Image
@@ -43,12 +50,18 @@ export default function Home() {
       </div>
       <div className="absolute bottom-[-50px] right-[-115px] w-[301.74px] h-[604px] z-10">
         <Image
-          src={rectangleWith2Helmet}
-          alt="Rectangle with helmet right"
+          src={rectangleFromLeft}
+          alt="Rectangle from Left"
           width={301.74}
           height={604}
           className="object-contain w-full h-full"
         />
+        <div className="absolute top-[0px] left-[80px] w-[45px] h-[45px] z-10 scale-x-[-1]">
+          <Image src={helmet} alt="Helmet" width={45} height={45} />
+        </div>
+        <div className="absolute top-[60px] right-[120px] w-[45px] h-[45px] z-10 scale-x-[-1]">
+          <Image src={helmet} alt="Helmet" width={45} height={45} />
+        </div>
       </div>
       <div className="absolute bottom-[-60px] left-[120px] xl:left-[120px] 2xl:left-[350px]">
         <Image
