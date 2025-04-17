@@ -53,7 +53,7 @@ export default function Discord() {
               type="button"
               className="mt-2 w-[333px] h-[71px] text-[30px] font-medium text-[var(--color-button-text)] bg-[var(--color-button-bg)]
                          rounded-full border border-[var(--color-button-border)]
-                         shadow-[0_6px_0_0_var(--color-button-shadow)]
+                         shadow-[0_9px_0_0_var(--color-button-shadow)]
                          active:translate-y-[2px]
                          transition-all"
             >
