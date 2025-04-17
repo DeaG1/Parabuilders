@@ -13,17 +13,15 @@ const buttonText = "Call to action";
 
 export default function Home() {
   return (
-    <section className="relative w-full bg-[#031f30] text-white overflow-hidden min-h-[930px]">
+    <section className="home-gradient relative w-full text-[var(--color-text)] overflow-hidden min-h-[930px]">
       <div className="absolute bottom-[380px] left-[-70px] w-[207.32px] h-[415px] z-0">
-        <div className="w-full h-full">
-          <Image
-            src={rectangleWithHelmet}
-            alt="Rectangle with helmet left"
-            width={207.32}
-            height={415}
-            className="object-contain w-full h-full"
-          />
-        </div>
+        <Image
+          src={rectangleWithHelmet}
+          alt="Rectangle with helmet left"
+          width={207.32}
+          height={415}
+          className="object-contain w-full h-full"
+        />
       </div>
       <div className="absolute bottom-[190px] left-[-50px] w-[211px] h-[279.32px] z-10">
         <Image
@@ -64,22 +62,28 @@ export default function Home() {
         />
       </div>
       <div className="relative z-20 w-full max-w-[1440px] mx-auto flex flex-col items-center text-center pt-20 px-4">
-        <p className="text-[14px] text-white/60 mb-4">{subtitle}</p>
+        <p className="text-[14px] text-[var(--color-text)]/60 mb-4">{subtitle}</p>
+
         <h1
           className="text-[46px] font-bold leading-tight mb-6 max-w-[1000px] leading-snug"
           dangerouslySetInnerHTML={{ __html: title }}
-          />
-        <p className="max-w-[880px] text-white/70 text-[16px] mb-6">
+        />
+
+        <p className="max-w-[880px] text-[var(--color-text)]/70 text-[16px] mb-6">
           {description}
         </p>
+
         <button
           type="button"
-          className="mt-2 w-[150px] h-[44px] bg-white text-black text-[16px] font-semibold rounded-full 
-             border border-[#FF5800] 
-             shadow-[0_6px_0_0_#FF5800] 
-             active:translate-y-[2px] 
-             transition-all flex items-center justify-center"
-          >
+          className="mt-2 w-[150px] h-[44px] 
+            bg-[var(--color-button-bg)] 
+            text-[var(--color-button-text)] 
+            text-[16px] font-semibold rounded-full 
+            border border-[var(--color-button-border)] 
+            shadow-[0_6px_0_0_var(--color-button-shadow)] 
+            active:translate-y-[2px] 
+            transition-all flex items-center justify-center"
+        >
           {buttonText}
         </button>
       </div>

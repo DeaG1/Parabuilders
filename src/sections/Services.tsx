@@ -6,7 +6,6 @@ import yellowBird from "@/assets/images/servicesBird2.png";
 import greenBird from "@/assets/images/servicesBird3.png";
 import blueBird from "@/assets/images/servicesBird4.png";
 
-// Utilitário simples para converter HEX para RGBA com opacidade
 function hexToRGBA(hex: string, alpha: number) {
   const cleanHex = hex.replace("#", "");
   const r = parseInt(cleanHex.substring(0, 2), 16);
@@ -52,8 +51,8 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-[140px] px-[150px] bg-[#031F30]">
-      <h2 className="text-[48px] font-bold text-white text-center mb-16">
+    <section className="py-[140px] px-[150px] bg-[var(--color-background)]">
+      <h2 className="text-[48px] font-bold text-[var(--color-text)] text-center mb-16">
         Services
       </h2>
       <div className="max-w-[1440px] mx-auto flex flex-col gap-[25px]">
@@ -95,13 +94,13 @@ export default function Services() {
                 <div className="w-[332px] flex flex-col justify-center px-6">
                   <div className="flex items-center gap-2 mb-4">
                     <div className="w-3 h-3 bg-orange-400 rounded-full" />
-                    <h3 className="text-white text-[20px] font-semibold">
+                    <h3 className="text-[var(--color-text)] text-[20px] font-semibold">
                       {service.title}
                     </h3>
                   </div>
                   <div className="flex items-start gap-5 ml-1">
                     <div className="w-2 bg-orange-400 h-full mt-1" />
-                    <p className="text-white text-[14px] leading-tight">
+                    <p className="text-[var(--color-text)] text-[14px] leading-tight">
                       {service.text}
                     </p>
                   </div>

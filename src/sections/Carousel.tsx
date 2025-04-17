@@ -48,6 +48,7 @@ const logos = [
     width: 192.86,
     height: 47.5,
     offsetY: -2,
+    offsetX: -50,
   },
   {
     alt: "Kaisar",
@@ -68,10 +69,24 @@ const logos = [
 
 export default function Carousel() {
   return (
-    <div className="relative w-full overflow-hidden bg-gradient-to-r from-[#031F30] via-[#FF5C00] to-[#031F30] py-12">
-      <div className="pointer-events-none absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-[#031F30] to-transparent z-10" />
-      <div className="pointer-events-none absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-[#031F30] to-transparent z-10" />
-
+    <div
+      className="relative w-full overflow-hidden py-12"
+      style={{
+        background: "linear-gradient(to right, var(--color-background), var(--color-primary), var(--color-background))",
+      }}
+    >
+      <div
+        className="pointer-events-none absolute left-0 top-0 h-full w-20 z-10"
+        style={{
+          background: "linear-gradient(to right, var(--color-background), transparent)",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute right-0 top-0 h-full w-20 z-10"
+        style={{
+          background: "linear-gradient(to left, var(--color-background), transparent)",
+        }}
+      />
       <div className="flex w-max animate-slide gap-16 px-8">
         {Array.from({ length: 10 }).flatMap(() =>
           logos.map((logo, index) => (
@@ -82,6 +97,7 @@ export default function Carousel() {
                 width: logo.width,
                 height: logo.height,
                 transform: `translateY(${logo.offsetY ?? 0}px)`,
+                marginLeft: logo.offsetX ?? 0,
               }}
             >
               <Image

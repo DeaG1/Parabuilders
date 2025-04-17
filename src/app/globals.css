@@ -3,28 +3,47 @@
 @tailwind utilities;
 
 .light {
+  .home-gradient{
+    background: linear-gradient(180deg, #ffffff 0%, #7ec8f5 100%);
+  }
   --color-background: #ffffff;
   --color-navbar: #ffffff;
   --color-primary: #015186;
   --color-accent: #7ec8f5;
+  --color-results-text: #015186;
   --color-results-bg: #e4f4fb;
-  --color-carousel: #064a7c;
-  --color-footer: #f2f2f2;
+  --color-footer: #015186;
   --color-text: #000000;
-  --color-border: rgba(0, 0, 0, 0.1);
+  --color-border: var(--color-primary);
+  --color-button-bg: #ff5800;
+  --color-button-text: #ffffff;
+  --color-button-border: var(--color-primary);
+  --color-button-shadow: var(--color-primary);
+  --color-contactWithUs: #ff5800;
+  --color-contact-background: #FFE0D0;
 }
 
 .dark {
+  .home-gradient{
+    background: var(--color-background);
+  }
   --color-background: #031f30;
   --color-navbar: #01121a;
   --color-primary: #ff5800;
   --color-accent: #015186;
-  --color-results-bg: #02141f;
-  --color-carousel: #013153;
+  --color-results-text: #000000;
+  --color-results-bg: #FCD8B5;
   --color-footer: #053350;
   --color-text: #ffffff;
-  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border: var(--color-accent);
+  --color-button-bg: #ffffff;
+  --color-button-text: #000000;
+  --color-button-border: var(--color-primary);
+  --color-button-shadow: var(--color-primary);
+  --color-contactWithUs: #ff5800;
+  --color-contact-background: #3B2C26;
 }
+
 
 @keyframes slide {
   0% {

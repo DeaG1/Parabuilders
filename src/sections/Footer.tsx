@@ -11,9 +11,8 @@ const policyLinks = ["Privacy & Policy", "Terms & Condition"];
 
 export default function Footer() {
   return (
-    <footer className="bg-[#053350] text-white pt-[65px] pb-8 px-[60px] xl:px-[50px]">
+    <footer className="bg-[var(--color-footer)] text-white pt-[65px] pb-8 px-[60px] xl:px-[50px]">
       <div className="flex flex-col md:flex-row items-start border-b border-white/10 pb-12 gap-y-10 md:gap-y-0">
-        {/* Logo + Visão + Ícones sociais */}
         <div className="flex flex-col justify-between h-full min-w-[400px] max-w-[299px]">
           <div className="flex flex-col gap-6">
             <Image
@@ -37,8 +36,6 @@ export default function Footer() {
             ))}
           </div>
         </div>
-
-        {/* Links */}
         <div className="flex flex-col md:flex-row gap-[240px] pl-[60px]">
           {[{ title: "About", links: aboutLinks },
             { title: "Community", links: communityLinks },
@@ -57,8 +54,6 @@ export default function Footer() {
             ))}
         </div>
       </div>
-
-      {/* Rodapé inferior */}
       <div className="flex flex-col md:flex-row justify-between items-center pt-8 text-[18px] text-white/60 gap-4">
         <span>{footerBottomText}</span>
         <div className="flex gap-20">
