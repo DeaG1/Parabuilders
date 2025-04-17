@@ -10,7 +10,7 @@ const subtitle = "Real voices mean Real traction";
 const title = "YOUR WEB3 DESERVES MORE THAN HYPE,<br/> WE BRING QUALITY";
 const description =
   "We connect your Web3 project with leading content creators, ensuring seamless and organic communication that drives meaningful engagement.";
-const buttonText = "Call to action";
+const buttonText = "Contact us";
 
 export default function Home() {
   return (

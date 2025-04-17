@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import moonIcon from "@/assets/images/icons/moonIcon.svg";
+import sunIcon from "@/assets/images/icons/sunIcon.png";
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -24,7 +25,7 @@ export default function ThemeToggle() {
 
   return (
     <Image
-      src={moonIcon}
+      src={theme === "dark" ? sunIcon : moonIcon}
       alt="Toggle theme"
       width={20}
       height={20}
