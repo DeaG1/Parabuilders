@@ -1,13 +1,14 @@
 import Image from "next/image";
-import logoParabuilders from "@/assets/images/logo.png";
+import logoParabuilders from "@/assets/images/footer/logo.png";
+import triadLogo from "@/assets/images/footer/triadLogo.png";
+import triadText from "@/assets/images/footer/triadText.png";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const visionText = "Our vision is to provide growth and <br/> increase your business.";
-const aboutLinks = ["Results", "Roadmap", "Services"];
-const communityLinks = ["Events", "Blog", "Podcast"];
+const communityLinks = ["Results", "Roadmap", "Services"];
 const socialsLinks = ["Discord", "Instagram", "Twitter"];
 const footerBottomText = "©2025 Parabuilders. All rights reserved";
-const policyLinks = ["Privacy & Policy", "Terms & Condition"];
+const text = "Powered by";
 
 export default function Footer() {
   return (
@@ -36,32 +37,43 @@ export default function Footer() {
             ))}
           </div>
         </div>
-        <div className="flex flex-col md:flex-row gap-[240px] pl-[60px]">
-          {[{ title: "About", links: aboutLinks },
-            { title: "Community", links: communityLinks },
-            { title: "Socials", links: socialsLinks }].map((section, index) => (
-              <div key={index} className="flex flex-col gap-7 w-[132px]">
-                <h3 className="text-[20px] font-semibold mb-2">{section.title}</h3>
-                {section.links.map((link, i) => (
-                  <span
-                    key={i}
-                    className="cursor-pointer hover:text-white/70 text-[16px]"
-                  >
-                    {link}
-                  </span>
-                ))}
-              </div>
-            ))}
+          <div className="w-full max-w-[1440px] mx-auto flex flex-col md:flex-row gap-[190px] justify-center pl-[450px] 2xl:pl-[800px]">
+    {[{ title: "About", links: communityLinks },
+      { title: "Socials", links: socialsLinks }].map((section, index) => (
+        <div key={index} className="flex flex-col gap-7 w-[132px]">
+          <h3 className="text-[20px] font-semibold mb-2">{section.title}</h3>
+          {section.links.map((link, i) => (
+            <span
+              key={i}
+              className="cursor-pointer hover:text-white/70 text-[16px]"
+            >
+              {link}
+            </span>
+          ))}
         </div>
+    ))}
+  </div>
       </div>
       <div className="flex flex-col md:flex-row justify-between items-center pt-8 text-[18px] text-white/60 gap-4">
         <span>{footerBottomText}</span>
-        <div className="flex gap-20">
-          {policyLinks.map((text, i) => (
-            <span key={i} className="cursor-pointer hover:text-white">
-              {text}
-            </span>
-          ))}
+        <div className="flex items-center gap-2">
+          <span>{text}</span>
+          <div className="flex items-center gap-[4px]">
+            <Image
+              src={triadLogo}
+              alt="Triad logo"
+              width={16.5}
+              height={14.3}
+              className="object-contain"
+            />
+            <Image
+              src={triadText}
+              alt="Triad text"
+              width={36}
+              height={18}
+              className="object-contain -ml-1 mt-[3px]"
+            />
+          </div>
         </div>
       </div>
     </footer>

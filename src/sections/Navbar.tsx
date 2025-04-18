@@ -1,9 +1,12 @@
 "use client";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import logo from "@/assets/images/logoWithName.png";
-import earthIcon from "@/assets/images/icons/earthIcon.svg";
+import logo from "@/assets/images/navbar/logoWithName.png";
+import earthIcon from "@/assets/images/navbar/earthIcon.svg";
 import ThemeToggle from "@/components/ThemeToggle";
+import darkModeFeather from "@/assets/images/navbar/orangeFeather.png";
+import lightModeFeather from "@/assets/images/navbar/blueFeather.png";
 
 const buttonText = "Social codorna";
 
@@ -15,6 +18,19 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const updateTheme = () => {
+      setIsDarkMode(root.classList.contains("dark"));
+    };
+    updateTheme();
+    const observer = new MutationObserver(updateTheme);
+    observer.observe(root, { attributes: true, attributeFilter: ["class"] });
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <nav className="bg-[var(--color-navbar)] w-full py-4">
@@ -37,11 +53,20 @@ export default function Navbar() {
               >
                 {link.label}
                 <span
-                  className="absolute left-0 -bottom-1 h-[2px] w-full scale-x-0 bg-[var(--color-primary)] transition-transform duration-300 group-hover:scale-x-100 origin-left"
+                  className="absolute left-0 -bottom-5 h-[20px] w-[100%] overflow-hidden pointer-events-none"
                   aria-hidden="true"
-                />
+                >
+                  <Image
+                    src={isDarkMode ? darkModeFeather : lightModeFeather}
+                    alt="feather underline"
+                    width={100}
+                    height={10}
+                    className="transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-in-out"
+                  />
+                </span>
               </Link>
             ))}
+
             <div className="h-5 border-r border-[var(--color-border)] mr-[-10px]" />
             <div className="flex items-center gap-[20px] text-[var(--color-text)] text-xl">
               <ThemeToggle />

@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import moonIcon from "@/assets/images/icons/moonIcon.svg";
-import sunIcon from "@/assets/images/icons/sunIcon.png";
+import moonIcon from "@/assets/images/navbar/moonIcon.svg";
+import sunIcon from "@/assets/images/navbar/sunIcon.png";
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState<"light" | "dark">("light");

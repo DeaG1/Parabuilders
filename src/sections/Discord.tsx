@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import discordBannerDarkMode from "@/assets/images/discordBannerDarkMode.png";
-import discordBannerLightMode from "@/assets/images/discordBannerLightMode.png";
+import discordBannerDarkMode from "@/assets/images/discord/discordBannerDarkMode.png";
+import discordBannerLightMode from "@/assets/images/discord/discordBannerLightMode.png";
 
 const titleLines = ["BECOME A", "CREATOR", "NOW"];
 const subtitle = "join our community on discord";

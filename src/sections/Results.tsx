@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import whiteFootPrints from "@/assets/images/whiteFootprints.png";
-import darkFootPrints from "@/assets/images/darkFootprints.png";
-import hand from "@/assets/images/hand.png";
+import whiteFootPrints from "@/assets/images/results/whiteFootprints.png";
+import darkFootPrints from "@/assets/images/results/darkFootprints.png";
+import hand from "@/assets/images/results/hand.png";
 
 const title = {
   title: ["ParaBuilders", "More than just a community of", "content creators."],

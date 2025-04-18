@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
-import rectangle from "@/assets/images/rectangle.png";
-import rectangleFromRight from "@/assets/images/rectangleFromRight.png";
-import rectangleFromLeft from "@/assets/images/rectangleFromLeft.png";
-import factory from "@/assets/images/factory.png";
-import helmet from "@/assets/images/helmet.gif";
+import rectangle from "@/assets/images/home/rectangle.png";
+import rectangleFromRight from "@/assets/images/home/rectangleFromRight.png";
+import rectangleFromLeft from "@/assets/images/home/rectangleFromLeft.png";
+import factory from "@/assets/images/home/factory.png";
+import helmet from "@/assets/images/home/helmet.gif";
+
 
 const subtitle = "Real voices mean Real traction";
 const title = "YOUR WEB3 DESERVES MORE THAN HYPE,<br/> WE BRING QUALITY";
@@ -25,9 +26,7 @@ export default function Home() {
         />
         <div className="absolute top-[25px] left-[80px] w-[45px] h-[45px] z-10">
           <Image src={helmet} alt="Helmet" width={45} height={45} />
-        </div>
-        <div className="absolute top-[-30px] right-[45px] w-[45px] h-[45px] z-10">
-          <Image src={helmet} alt="Helmet" width={45} height={45} />
+          <div className="absolute top-[10px] left-[-5px] w-[8px] h-[8px] bg-[#FF5800] rounded-full z-20 shadow-md" />
         </div>
       </div>
       <div className="absolute bottom-[190px] left-[-50px] w-[211px] h-[279.32px] z-10">
@@ -100,6 +99,7 @@ export default function Home() {
           {buttonText}
         </button>
       </div>
+      <div className="absolute bottom-0 left-0 w-full h-[60px] bg-[var(--color-background)]" />
     </section>
   );
 }
