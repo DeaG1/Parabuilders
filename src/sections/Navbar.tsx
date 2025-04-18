@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import logo from "@/assets/images/navbar/logoWithName.png";
 import earthIcon from "@/assets/images/navbar/earthIcon.svg";
 import ThemeToggle from "@/components/ThemeToggle";
