@@ -45,21 +45,6 @@
   --color-contact-background: #3B2C26;
 }
 
-
-@keyframes slide {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-25%);
-  }
-}
-
-.animate-slide {
-  animation: slide 60s linear infinite;
-  will-change: transform;
-}
-
 html {
   scroll-behavior: smooth;
 }

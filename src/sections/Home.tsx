@@ -25,7 +25,7 @@ export default function Home() {
           className="object-contain w-full h-full"
         />
         <div className="absolute top-[25px] left-[80px] w-[45px] h-[45px] z-10">
-          <Image src={helmet} alt="Helmet" width={45} height={45} />
+          <Image src={helmet} alt="Helmet" width={45} height={45} unoptimized/>
           <div className="absolute top-[10px] left-[-5px] w-[8px] h-[8px] bg-[#FF5800] rounded-full z-20 shadow-md" />
         </div>
       </div>
@@ -56,10 +56,10 @@ export default function Home() {
           className="object-contain w-full h-full"
         />
         <div className="absolute top-[0px] left-[80px] w-[45px] h-[45px] z-10 scale-x-[-1]">
-          <Image src={helmet} alt="Helmet" width={45} height={45} />
+          <Image src={helmet} alt="Helmet" width={45} height={45} unoptimized/>
         </div>
         <div className="absolute top-[60px] right-[120px] w-[45px] h-[45px] z-10 scale-x-[-1]">
-          <Image src={helmet} alt="Helmet" width={45} height={45} />
+          <Image src={helmet} alt="Helmet" width={45} height={45} unoptimized/>
         </div>
       </div>
       <div className="absolute bottom-[-60px] left-[120px] xl:left-[120px] 2xl:left-[350px]">

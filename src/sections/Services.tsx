@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
 
-import pinkBird from "@/assets/images/services/servicesBird1.png";
-import yellowBird from "@/assets/images/services/servicesBird2.png";
-import greenBird from "@/assets/images/services/servicesBird3.png";
-import blueBird from "@/assets/images/services/servicesBird4.png";
+import pinkBird from "@/assets/images/services/pinkBird.png";
+import yellowBird from "@/assets/images/services/yellowBird.png";
+import greenBird from "@/assets/images/services/greenBird.png";
+import blueBird from "@/assets/images/services/blueBird.png";
 
 function hexToRGBA(hex: string, alpha: number) {
   const cleanHex = hex.replace("#", "");
