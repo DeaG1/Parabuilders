@@ -27,7 +27,7 @@ const socialLinks: {
   },
   {
     icon: FaInstagram,
-    href: "https://instagram.com/parabuilders",
+    href: "https://www.instagram.com/parabuildersxyz/",
     label: "Instagram",
   },
   {

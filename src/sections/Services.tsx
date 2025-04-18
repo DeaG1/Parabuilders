@@ -72,7 +72,7 @@ export default function Services() {
                 } rounded-2xl`}
                 style={{
                   width: "542px",
-                  height: "198px",
+                  height: "189px",
                   backgroundColor: hexToRGBA(service.bgColor, 0.2),
                   borderColor: service.border,
                 }}
@@ -81,7 +81,7 @@ export default function Services() {
                   className={`relative flex-shrink-0 overflow-hidden ${
                     isLeft ? "rounded-l-2xl" : "rounded-r-2xl"
                   }`}
-                  style={{ width: "210px", height: "198px" }}
+                  style={{ width: "210px", height: "189px" }}
                 >
                   <Image
                     src={service.image}
