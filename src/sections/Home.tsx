@@ -15,7 +15,7 @@ const buttonText = "Contact us";
 
 export default function Home() {
   return (
-    <section className="home-gradient relative w-full text-[var(--color-text)] overflow-hidden min-h-[930px]">
+    <section id="home" className="home-gradient relative w-full text-[var(--color-text)] overflow-hidden min-h-[930px]">
       <div className="absolute bottom-[380px] left-[-70px] w-[207.32px] h-[415px] z-0">
         <Image
           src={rectangleFromRight}
@@ -85,8 +85,8 @@ export default function Home() {
           {description}
         </p>
 
-        <button
-          type="button"
+        <a
+          href="#contact"
           className="mt-2 w-[150px] h-[44px] 
             bg-[var(--color-button-bg)] 
             text-[var(--color-button-text)] 
@@ -97,7 +97,7 @@ export default function Home() {
             transition-all flex items-center justify-center"
         >
           {buttonText}
-        </button>
+        </a>
       </div>
       <div className="absolute bottom-0 left-0 w-full h-[60px] bg-[var(--color-background)]" />
     </section>

@@ -38,7 +38,7 @@ export default function Results() {
 
   return (
     <section className="relative w-full bg-[var(--color-background)] text-[var(--color-text)] py-32 overflow-hidden">
-      <div className="absolute left-[0px] top-[0px] z-0">
+      <div className="absolute left-[-25px] top-[170px] z-0">
         <Image src={hand} alt="Hand" width={193} height={529} />
       </div>
       <div className="absolute right-[20px] top-[10px] z-0">
@@ -49,7 +49,7 @@ export default function Results() {
           height={400}
         />
       </div>
-      <div className="relative z-10 text-center px-4 flex flex-col items-center gap-2 md:gap-3 max-w-[1440px] mx-auto">
+      <div id="results" className="relative z-10 text-center px-4 flex flex-col items-center gap-2 md:gap-3 max-w-[1440px] mx-auto">
         {title.title.map((line, i) => (
           <p key={i} className="md:text-5xl xl:text-[48px] font-bold">
             {line}

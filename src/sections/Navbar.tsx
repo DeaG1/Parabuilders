@@ -11,10 +11,10 @@ import lightModeFeather from "@/assets/images/navbar/blueFeather.png";
 const buttonText = "Social codorna";
 
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "Results", href: "#" },
-  { label: "Services", href: "#" },
-  { label: "Social Media", href: "#" },
+  { label: "Home", href: "#home" },
+  { label: "Results", href: "#results" },
+  { label: "Services", href: "#services" },
+  { label: "Social Media", href: "#social-media" },
 ];
 
 export default function Navbar() {
@@ -30,7 +30,6 @@ export default function Navbar() {
     observer.observe(root, { attributes: true, attributeFilter: ["class"] });
     return () => observer.disconnect();
   }, []);
-
   return (
     <>
       <nav className="bg-[var(--color-navbar)] w-full py-4">
@@ -46,7 +45,7 @@ export default function Navbar() {
           </div>
           <div className="flex items-center gap-[41px] pr-[88px]">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.label}
                 href={link.href}
                 className="group relative text-[var(--color-text)] text-[16px] transition-colors duration-300 hover:text-[var(--color-primary)]"
@@ -64,9 +63,8 @@ export default function Navbar() {
                     className="transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-in-out"
                   />
                 </span>
-              </Link>
+              </a>
             ))}
-
             <div className="h-5 border-r border-[var(--color-border)] mr-[-10px]" />
             <div className="flex items-center gap-[20px] text-[var(--color-text)] text-xl">
               <ThemeToggle />

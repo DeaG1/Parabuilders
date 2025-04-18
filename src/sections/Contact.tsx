@@ -4,7 +4,7 @@ const buttonText = "Send message"
 
 export default function Contact() {
     return (
-      <section className="bg-[var(--color-background)] py-24 px-6 flex justify-center">
+      <section id="contact" className="bg-[var(--color-background)] py-24 px-6 flex justify-center">
         <div className="w-full max-w-4xl text-center">
           <span className="text-[12px] text-[var(--color-contactWithUs)] bg-[var(--color-contact-background)] px-5 py-1 rounded-full tracking-wide">
             {subtitle}

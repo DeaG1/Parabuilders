@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Marquee from "react-fast-marquee";
 
 const logos = [
   {
@@ -9,7 +10,8 @@ const logos = [
     color: "/metapoolLogoWithColor.png",
     width: 182.8,
     height: 22,
-    offsetY: 10,
+    offsetY: 1,
+    offsetX: -35,
   },
   {
     alt: "Inception LRT",
@@ -17,6 +19,7 @@ const logos = [
     color: "/inceptionLogo.png",
     width: 175,
     height: 42,
+    offsetY: -1,
   },
   {
     alt: "Mango",
@@ -24,7 +27,7 @@ const logos = [
     color: "/mangoLogo.png",
     width: 89,
     height: 31.2,
-    offsetY: 3,
+    offsetY: -2,
   },
   {
     alt: "BitMart",
@@ -32,7 +35,7 @@ const logos = [
     color: "/bitmartLogoWithColor.png",
     width: 150.2,
     height: 38.1,
-    offsetY: 1,
+    offsetY: -2,
   },
   {
     alt: "Streamflow",
@@ -40,7 +43,7 @@ const logos = [
     color: "/streamflowLogo.png",
     width: 237,
     height: 38.4,
-    offsetY: 2,
+    offsetY: 0,
   },
   {
     alt: "Turtle",
@@ -57,6 +60,7 @@ const logos = [
     color: "/kaisarLogo.png",
     width: 127.6,
     height: 40.5,
+    offsetY: -1,
   },
   {
     alt: "Bitget",
@@ -87,8 +91,8 @@ export default function Carousel() {
   }, []);
 
   const backgroundStyle = isDarkMode
-  ? "linear-gradient(to right, #003459 0%, #FF5800 50%, #003459 100%)"
-  : "linear-gradient(to right, #003459 0%, #0072CE 50%, #003459 100%)";
+    ? "linear-gradient(to right, #003459 0%, #FF5800 50%, #003459 100%)"
+    : "linear-gradient(to right, #003459 0%, #0072CE 50%, #003459 100%)";
 
   return (
     <div
@@ -97,37 +101,35 @@ export default function Carousel() {
         background: backgroundStyle,
       }}
     >
-      <div className="flex w-max animate-slide gap-16 px-8">
-        {Array.from({ length: 10 }).flatMap(() =>
-          logos.map((logo, index) => (
-            <div
-              key={`${logo.alt}-${index}`}
-              className="group relative flex items-center justify-center"
-              style={{
-                width: logo.width,
-                height: logo.height,
-                transform: `translateY(${logo.offsetY ?? 0}px)`,
-                marginLeft: logo.offsetX ?? 0,
-              }}
-            >
-              <Image
-                src={logo.bw}
-                alt={logo.alt}
-                width={logo.width}
-                height={logo.height}
-                className="object-contain absolute transition-opacity duration-300 opacity-100 group-hover:opacity-0"
-              />
-              <Image
-                src={logo.color}
-                alt={logo.alt}
-                width={logo.width}
-                height={logo.height}
-                className="object-contain transition-opacity duration-300 opacity-0 group-hover:opacity-100"
-              />
-            </div>
-          ))
-        )}
-      </div>
+      <Marquee speed={60} gradient={false} className="gap-16 px-8">
+      {[...logos, ...logos].map((logo, index) => (
+          <div
+            key={`${logo.alt}-${index}`}
+            className="group relative flex items-center justify-center mx-28"
+            style={{
+              width: logo.width,
+              height: logo.height,
+              transform: `translateY(${logo.offsetY ?? 0}px)`,
+              marginLeft: logo.offsetX ?? 0,
+            }}
+          >
+            <Image
+              src={logo.bw}
+              alt={logo.alt}
+              width={logo.width}
+              height={logo.height}
+              className="object-contain absolute transition-opacity duration-300 opacity-100 group-hover:opacity-0"
+            />
+            <Image
+              src={logo.color}
+              alt={logo.alt}
+              width={logo.width}
+              height={logo.height}
+              className="object-contain transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+            />
+          </div>
+        ))}
+      </Marquee>
     </div>
   );
 }
