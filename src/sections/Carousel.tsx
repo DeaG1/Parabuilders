@@ -87,8 +87,8 @@ export default function Carousel() {
   }, []);
 
   const backgroundStyle = isDarkMode
-  ? "linear-gradient(to right, #3A78A3 0%, #064A7C 50%, #3A78A3 100%)"
-  : "linear-gradient(to right, #3A78A3 0%, #064A7C 50%, #3A78A3 100%)";
+  ? "linear-gradient(to right, #003459 0%, #FF5800 50%, #003459 100%)"
+  : "linear-gradient(to right, #003459 0%, #0072CE 50%, #003459 100%)";
 
   return (
     <div
