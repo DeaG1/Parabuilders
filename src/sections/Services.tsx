@@ -79,15 +79,15 @@ export default function Services() {
               >
                 <div
                   className={`relative flex-shrink-0 overflow-hidden ${
-                    isLeft ? "rounded-l-2xl" : "rounded-r-2xl"
+                    isLeft ? "rounded-l-xl" : "rounded-r-xl"
                   }`}
-                  style={{ width: "210px", height: "189px" }}
+                  style={{ width: "210px", height: "189px", backgroundColor: service.bgColor, }}
                 >
                   <Image
                     src={service.image}
                     alt={service.title}
                     width={210}
-                    height={198}
+                    height={189}
                     className="object-cover w-full h-full"
                   />
                 </div>

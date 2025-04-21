@@ -62,7 +62,7 @@ export default function Home() {
           <Image src={helmet} alt="Helmet" width={45} height={45} unoptimized/>
         </div>
       </div>
-      <div className="absolute bottom-[-60px] left-[120px] xl:left-[120px] 2xl:left-[350px]">
+      <div className="absolute bottom-[-60px] left-[120px] xl:left-[280px] 2xl:left-[350px]">
         <Image
           src={factory}
           alt="Factory with codorna"

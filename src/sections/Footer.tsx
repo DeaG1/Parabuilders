@@ -102,16 +102,16 @@ export default function Footer() {
             <Image
               src={triadLogo}
               alt="Triad logo"
-              width={16.5}
-              height={14.3}
-              className="object-contain"
+              width={36}
+              height={36}
+              className="object-contain -mt-3"
             />
             <Image
               src={triadText}
               alt="Triad text"
-              width={36}
-              height={18}
-              className="object-contain -ml-1 mt-[3px]"
+              width={42}
+              height={28}
+              className="object-contain ml-1 mt-[3px]"
             />
           </div>
         </div>
