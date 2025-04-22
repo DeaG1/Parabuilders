@@ -1,12 +1,11 @@
 import Image from "next/image";
 import logoParabuilders from "@/assets/images/footer/logo.png";
 import triadLogo from "@/assets/images/footer/triadLogo.png";
-import triadText from "@/assets/images/footer/triadText.png";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaTwitter, FaInstagram } from "react-icons/fa";
 import { IconType } from "react-icons";
 
 const visionText = "Our vision is to provide growth and <br/> increase your business.";
-const communityLinks = ["Results", "Roadmap", "Services"];
+const communityLinks = ["Results", "Services", "Contact"];
 const socialsLinks = ["Discord", "Instagram", "Twitter"];
 const footerBottomText = "©2025 Parabuilders. All rights reserved";
 const text = "Powered by";
@@ -16,10 +15,6 @@ const socialLinks: {
   href: string;
   label?: string;
 }[] = [
-  {
-    icon: FaFacebookF,
-    href: "https://facebook.com",
-  },
   {
     icon: FaTwitter,
     href: "https://twitter.com/parabuilders",
@@ -78,12 +73,13 @@ export default function Footer() {
                 const matched = socialLinks.find(
                   s => s.label?.toLowerCase() === link.toLowerCase()
                 );
+
+                const isAnchorLink = section.title === "About";
+
                 return (
                   <a
                     key={i}
-                    href={matched?.href || "#"}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={isAnchorLink ? `#${link.toLowerCase()}` : matched?.href || "#"}
                     className="cursor-pointer hover:text-white/70 text-[16px]"
                   >
                     {link}
@@ -99,20 +95,13 @@ export default function Footer() {
         <div className="flex items-center gap-2">
           <span>{text}</span>
           <div className="flex items-center gap-[4px]">
-            <Image
-              src={triadLogo}
-              alt="Triad logo"
-              width={36}
-              height={36}
-              className="object-contain -mt-3"
-            />
-            <Image
-              src={triadText}
-              alt="Triad text"
-              width={42}
-              height={28}
-              className="object-contain ml-1 mt-[3px]"
-            />
+          <Image
+            src={triadLogo}
+            alt="Triad logo + text"
+            width={80}
+            height={26}
+            className="object-contain mt-[-3px]"
+          />
           </div>
         </div>
       </div>

@@ -121,13 +121,16 @@ export default function Navbar() {
             </div>
             <button
               type="button"
+              disabled
+              title="Temporarily Unavailable"
               className="px-5 py-2 text-[14px] font-medium 
                          text-[var(--color-button-text)] 
                          bg-[var(--color-button-bg)] 
                          rounded-full border border-[var(--color-button-border)] 
                          shadow-[0_6px_0_0_var(--color-button-shadow)] 
                          active:translate-y-[2px] 
-                         transition-all"
+                         transition-all
+                         cursor-not-allowed opacity-50"
             >
               {buttonText}
             </button>
