@@ -56,6 +56,8 @@ export default function Home() {
           />
         </video>
       )}
+
+      {/* Capacete 1 */}
       <div className="
         absolute 
         top-[180px] 
@@ -69,10 +71,21 @@ export default function Home() {
         2xl:top-[180px]
         w-[45px] 
         h-[45px] 
-        z-20">
-        <Image src={helmet} alt="Helmet" width={45} height={45} unoptimized />
+        z-20
+        transition-opacity duration-500"
+      >
+        <Image
+          key={theme}
+          src={helmet}
+          alt="Helmet"
+          width={45}
+          height={45}
+          unoptimized
+          className="opacity-0 animate-fade-in transition-opacity duration-500"
+        />
       </div>
 
+      {/* Capacete 2 */}
       <div className="absolute
         xl:right-[30px]
         xl:top-[330px]
@@ -81,9 +94,21 @@ export default function Home() {
         w-[45px]
         h-[45px] 
         z-20 
-        scale-x-[-1]">
-        <Image src={helmet} alt="Helmet" width={45} height={45} unoptimized />
+        scale-x-[-1]
+        transition-opacity duration-500"
+      >
+        <Image
+          key={theme + "-1"} // outro key pra forçar remount individual
+          src={helmet}
+          alt="Helmet"
+          width={45}
+          height={45}
+          unoptimized
+          className="opacity-0 animate-fade-in transition-opacity duration-500"
+        />
       </div>
+
+      {/* Capacete 3 */}
       <div className="
         absolute 
         2xl:top-[580px] 
@@ -92,30 +117,43 @@ export default function Home() {
         w-[45px] 
         h-[45px] 
         z-20 
-        scale-x-[-1]">
-        <Image src={helmet} alt="Helmet" width={45} height={45} unoptimized />
-        
+        scale-x-[-1]
+        transition-opacity duration-500"
+      >
+        <Image
+          key={theme + "-2"}
+          src={helmet}
+          alt="Helmet"
+          width={45}
+          height={45}
+          unoptimized
+          className="opacity-0 animate-fade-in transition-opacity duration-500"
+        />
       </div>
 
-      <div className="relative z-20 w-full max-w-[1440px] mx-auto flex flex-col items-center text-center pt-20 px-4 md:pt-4 lg:pt-14 xl:pt-10 2xl:pt-32">
-        <p className="text-[14px] text-[var(--color-text)]/60 mb-4">{subtitle}</p>
+      {/* Conteúdo principal */}
+      <div className="relative z-20 w-full max-w-[1440px] mx-auto flex flex-col items-center text-center pt-20 px-4 md:pt-4 lg:pt-14 xl:pt-10 2xl:pt-32 transition-opacity duration-500">
+        <p className="text-[14px] text-[var(--color-text)]/60 mb-4 transition-opacity duration-500">{subtitle}</p>
         <h1
-          className="text-[32px] sm:text-[36px] md:text-[40px] xl:text-[46px] font-bold leading-tight mb-6 max-w-[1000px] leading-snug"
+          className="text-[32px] sm:text-[36px] md:text-[40px] xl:text-[46px] font-bold leading-tight mb-6 max-w-[1000px] leading-snug transition-colors duration-500"
           dangerouslySetInnerHTML={{ __html: title }}
         />
-        <p className="max-w-[880px] text-[var(--color-text)]/70 text-[14px] sm:text-[15px] md:text-[16px] mb-6 px-2 md:px-0">
+        <p className="max-w-[880px] text-[var(--color-text)]/70 text-[14px] sm:text-[15px] md:text-[16px] mb-6 px-2 md:px-0 transition-colors duration-500">
           {description}
         </p>
         <a
+          key={theme}
           href="#contact"
           className="mt-2 w-[140px] sm:w-[150px] h-[42px] sm:h-[44px] 
             bg-[var(--color-button-bg)] 
             text-[var(--color-button-text)] 
-            text-[14px] sm:text-[16px] font-semibold rounded-full 
             border border-[var(--color-button-border)] 
             shadow-[0_6px_0_0_var(--color-button-shadow)] 
+            transition-all duration-500 
+            opacity-0 animate-fade-in
+            text-[14px] sm:text-[16px] font-semibold rounded-full 
             active:translate-y-[2px] 
-            transition-all flex items-center justify-center"
+            flex items-center justify-center"
         >
           {buttonText}
         </a>
