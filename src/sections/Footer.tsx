@@ -92,7 +92,7 @@ export default function Footer() {
       </div>
       <div className="flex flex-col md:flex-row justify-between items-center pt-8 text-[18px] text-white/60 gap-4">
         <span>{footerBottomText}</span>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           <span>{text}</span>
           <div className="flex items-center gap-[4px]">
           <Image
