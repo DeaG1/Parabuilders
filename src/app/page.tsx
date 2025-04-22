@@ -9,15 +9,15 @@ import Footer from "@/sections/Footer";
 
 export default function Parabuilders() {
     return (
-        <>
-            <Navbar />
-            <Home />
-            <Results />
-            <Carousel />
-            <Services />
-            <Contact />
-            <Discord />
-            <Footer />
-        </>
+      <div className="relative overflow-x-hidden w-full">
+        <Navbar />
+        <Home />
+        <Results />
+        <Carousel />
+        <Services />
+        <Contact />
+        <Discord />
+        <Footer />
+      </div>
     );
-}
+  }
