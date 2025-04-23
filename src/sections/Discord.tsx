@@ -5,7 +5,6 @@ import discordBannerDarkMode from "@/assets/images/discord/discordBannerDarkMode
 import discordBannerLightMode from "@/assets/images/discord/discordBannerLightMode.png";
 import discordBannerDarkModeMobile from "@/assets/images/discord/discordBannerDarkModeMobile.png";
 import discordBannerLightModeMobile from "@/assets/images/discord/discordBannerLightModeMobile.png";
-import hand from "@/assets/images/discord/hand.png";
 
 const titleLines = ["BECOME A", "CREATOR", "NOW"];
 const subtitle = "join our community on discord";
