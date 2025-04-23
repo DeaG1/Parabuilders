@@ -75,19 +75,15 @@ export default function Home() {
             />
           </video>
         )}
-
-        {/* Helmet icons (mantido só no desktop) */}
-        <div className="absolute top-[80px] left-[80px] w-[45px] h-[45px] z-20 transition-opacity duration-500">
+        <div className="absolute top-[140px] left-[20px] w-[45px] h-[45px] z-20 transition-opacity duration-500">
           <Image key={theme} src={helmet} alt="Helmet" width={45} height={45} unoptimized />
         </div>
-        <div className="absolute top-[200px] right-[20px] w-[45px] h-[45px] z-20 scale-x-[-1] transition-opacity duration-500">
+        <div className="absolute top-[300px] right-[20px] w-[45px] h-[45px] z-20 scale-x-[-1] transition-opacity duration-500">
           <Image key={theme + "-1"} src={helmet} alt="Helmet" width={45} height={45} unoptimized />
         </div>
-        <div className="absolute top-[320px] right-[10px] w-[45px] h-[45px] z-20 scale-x-[-1] transition-opacity duration-500">
+        <div className="absolute top-[370px] right-[10px] w-[45px] h-[45px] z-20 scale-x-[-1] transition-opacity duration-500">
           <Image key={theme + "-2"} src={helmet} alt="Helmet" width={45} height={45} unoptimized />
         </div>
-
-        {/* Textos e botão no desktop */}
         <div className="relative z-20 w-full max-w-[1440px] mx-auto flex flex-col items-center text-center pt-20 px-4">
           <p className="text-[14px] text-[var(--color-text)]/60 mb-4">{subtitle}</p>
           <h1
@@ -100,7 +96,7 @@ export default function Home() {
           <a
             key={theme}
             href="#contact"
-            className="mt-2 w-[220px] h-[44px] bg-[var(--color-button-bg)] text-[var(--color-button-text)] border border-[var(--color-button-border)] shadow-[0_6px_0_0_var(--color-button-shadow)] text-[16px] font-semibold rounded-full active:translate-y-[2px] flex items-center justify-center"
+            className="mt-2 xl:mt-[-6px] w-[220px] h-[44px] bg-[var(--color-button-bg)] text-[var(--color-button-text)] border border-[var(--color-button-border)] shadow-[0_6px_0_0_var(--color-button-shadow)] text-[16px] font-semibold rounded-full active:translate-y-[2px] flex items-center justify-center"
           >
             {buttonText}
           </a>

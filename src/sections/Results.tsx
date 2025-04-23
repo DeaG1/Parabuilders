@@ -64,7 +64,7 @@ export default function Results() {
           </p>
         ))}
       </div>
-      <div className="relative z-10 mt-16 w-full">
+      <div className="relative z-10 mt-16 xl:mt-32 w-full">
         <div className="hidden md:flex flex-wrap justify-center gap-x-[28px] gap-y-7 w-[1440px] mx-auto">
           {cards.map((card, index) => (
             <div key={index} className="relative w-[412px] h-[230px]">
