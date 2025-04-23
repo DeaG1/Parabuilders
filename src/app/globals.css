@@ -7,6 +7,7 @@
     background: linear-gradient(180deg, #ffffff 0%, #7ec8f5 100%);
   }
   --color-background: #ffffff;
+  --color-mobileBackground: #ffffff;
   --color-navbar: #ffffff;
   --color-primary: #015186;
   --color-primary-rgb: 1, 81, 134;
@@ -29,6 +30,7 @@
     background: var(--color-background);
   }
   --color-background: #031f30;
+  --color-mobileBackground: #011E2A;
   --color-navbar: #01121a;
   --color-primary: #ff5800;
   --color-accent: #015186;

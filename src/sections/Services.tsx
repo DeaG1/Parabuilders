@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import MotionServiceCard from "@/components/motions/motionServiceCards"
+import MotionServiceCard from "@/components/motions/motionServiceCards";
 
 import pinkBird from "@/assets/images/services/pinkBird.png";
 import yellowBird from "@/assets/images/services/yellowBird.png";
@@ -54,9 +54,9 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-[140px] px-[150px] bg-[var(--color-background)]"
+      className="py-[140px] px-[150px] max-md:px-4 max-md:py-20 bg-[var(--color-background)]"
     >
-      <h2 className="text-[48px] font-bold text-[var(--color-text)] text-center mb-16">
+      <h2 className="text-[48px] max-md:text-[30px] font-bold text-[var(--color-text)] text-center mb-16">
         Services
       </h2>
 
@@ -67,40 +67,42 @@ export default function Services() {
           return (
             <div
               key={index}
-              className={`w-full flex ${isLeft ? "justify-start" : "justify-end"}`}
+              className={`w-full flex ${isLeft ? "justify-start" : "justify-end"} max-md:justify-center`}
             >
               <MotionServiceCard isLeft={isLeft}>
                 <div
-                  className={`relative flex items-stretch overflow-hidden border-2 rounded-2xl ${
-                    isLeft ? "flex-row" : "flex-row-reverse"
-                  }`}
+                  className={`
+                    relative flex overflow-hidden border-2 rounded-[10px]
+                    ${isLeft ? "flex-row" : "flex-row-reverse"} max-md:flex-row
+                    md:h-[189px] md:w-[542px] w-full
+                  `}
                   style={{
-                    width: "542px",
-                    height: "189px",
                     backgroundColor: hexToRGBA(service.bgColor, 0.2),
                     borderColor: service.border,
                   }}
                 >
                   <div
-                    className={`relative flex-shrink-0 overflow-hidden ${
-                      isLeft ? "rounded-l-xl" : "rounded-r-xl"
-                    }`}
+                    className={`
+                      relative flex-shrink-0 overflow-hidden
+                      max-md:rounded-l-[10px] max-md:rounded-r-none
+                      ${isLeft ? "rounded-l-[10px]" : "rounded-r-[10px]"}
+                      md:w-[210px] w-[140px] min-w-[140px]
+                      aspect-[210/189]
+                    `}
                     style={{
-                      width: "210px",
-                      height: "189px",
                       backgroundColor: service.bgColor,
                     }}
                   >
                     <Image
                       src={service.image}
                       alt={service.title}
-                      width={210}
-                      height={189}
-                      className="object-cover w-full h-full"
+                      fill
+                      className="object-cover"
                       unoptimized
                     />
                   </div>
-                  <div className="w-[332px] flex flex-col justify-center px-6">
+
+                  <div className="md:w-[332px] w-full flex flex-col justify-center px-6 py-4 flex-1">
                     <div className="flex items-center gap-2 mb-4">
                       <div className="w-3 h-3 bg-orange-400 rounded-full" />
                       <h3 className="text-[var(--color-text)] text-[20px] font-semibold">

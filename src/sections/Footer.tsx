@@ -34,14 +34,14 @@ const socialLinks: {
 
 export default function Footer() {
   return (
-    <footer className="bg-[var(--color-footer)] text-white pt-[65px] pb-8 px-[60px] xl:px-[50px]">
-      <div className="flex flex-col md:flex-row items-start border-b border-white/10 pb-12 gap-y-10 md:gap-y-0">
+    <footer className="bg-[var(--color-footer)] text-white sm:pt-[60px] sm:pr-[0px] pr-[65px] pb-8 sm:px-[30px] px-[60px] xl:px-[50px]">
+      <div className="flex flex-col md:flex-row items-start border-b border-white/10 pb-12 gap-y-10 md:gap-y-10]">
         <div className="flex flex-col justify-between h-full min-w-[400px] max-w-[299px]">
           <div className="flex flex-col gap-6">
             <Image
               src={logoParabuilders}
               alt="Parabuilders logo"
-              className="h-[67px] w-[67px]"
+              className="xl:h-[67px] xl:w-[67px] sm:h-[57px] sm:w-[57px]"
             />
             <p
               className="text-[16px] leading-relaxed"
@@ -64,7 +64,8 @@ export default function Footer() {
             )}
           </div>
         </div>
-        <div className="w-full max-w-[1440px] mx-auto flex flex-col md:flex-row gap-[190px] justify-center pl-[450px] 2xl:pl-[800px]">
+        <div className="w-full">
+        <div className="max-w-[1440px] mx-auto flex flex-col sm:flex-row md:flex-row gap-[40px] md:gap-[190px] sm:justify-start justify-center md:justify-start md:pl-[450px] 2xl:pl-[900px]">
           {[{ title: "About", links: communityLinks },
             { title: "Socials", links: socialsLinks }].map((section, index) => (
             <div key={index} className="flex flex-col gap-7 w-[132px]">
@@ -89,19 +90,20 @@ export default function Footer() {
             </div>
           ))}
         </div>
+        </div>
       </div>
       <div className="flex flex-col md:flex-row justify-between items-center pt-8 text-[18px] text-white/60 gap-4">
         <span>{footerBottomText}</span>
         <div className="flex items-center gap-1">
           <span>{text}</span>
           <div className="flex items-center gap-[4px]">
-          <Image
-            src={triadLogo}
-            alt="Triad logo + text"
-            width={80}
-            height={26}
-            className="object-contain mt-[-3px]"
-          />
+            <Image
+              src={triadLogo}
+              alt="Triad logo + text"
+              width={80}
+              height={26}
+              className="object-contain mt-[-1px]"
+            />
           </div>
         </div>
       </div>

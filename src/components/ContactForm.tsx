@@ -46,7 +46,7 @@ export default function ContactForm() {
       />
       <button
         type="submit"
-        className="mt-2 w-[166px] h-[44px] 
+        className="mt-2 w-[166px] h-[44px] max-md:w-full max-md:h-[50px]
                    bg-[var(--color-button-bg)] 
                    text-[var(--color-button-text)] 
                    text-[16px] font-semibold rounded-full 
