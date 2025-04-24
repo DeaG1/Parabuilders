@@ -45,7 +45,7 @@ export default function Results() {
 
   return (
     <section className="relative w-full bg-[var(--color-background)] text-[var(--color-text)] py-32 max-md:py-16 overflow-hidden">
-      <div className="absolute left-[-25px] top-[170px] z-0 hidden md:block">
+      <div className="absolute left-[-25px] top-[170px] 2xl:left[-50px] z-0 hidden md:block">
         <Image src={hand} alt="Hand" width={193} height={529} />
       </div>
       <div className="absolute right-[20px] max-md:right-[0] top-[10px] max-md:top-[140px] z-0">

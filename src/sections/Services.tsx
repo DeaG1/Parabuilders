@@ -54,7 +54,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-[140px] px-[150px] max-md:px-4 max-md:py-20 bg-[var(--color-background)]"
+      className="py-[140px] px-[150px] 2xl:px-[200px] max-md:px-4 max-md:py-20 bg-[var(--color-background)]"
     >
       <h2 className="text-[48px] max-md:text-[30px] font-bold text-[var(--color-text)] text-center mb-16">
         Services
@@ -72,9 +72,9 @@ export default function Services() {
               <MotionServiceCard isLeft={isLeft}>
                 <div
                   className={`
-                    relative flex overflow-hidden border-2 rounded-[10px]
+                    relative flex overflow-hidden border-2 rounded-[16px]
                     ${isLeft ? "flex-row" : "flex-row-reverse"} max-md:flex-row
-                    md:h-[189px] md:w-[542px] w-full
+                    min-h-[189px] md:w-[542px] 2xl:w-[640px] 2xl:min-h-[220px] w-full
                   `}
                   style={{
                     backgroundColor: hexToRGBA(service.bgColor, 0.2),
@@ -86,8 +86,8 @@ export default function Services() {
                       relative flex-shrink-0 overflow-hidden
                       max-md:rounded-l-[10px] max-md:rounded-r-none
                       ${isLeft ? "rounded-l-[10px]" : "rounded-r-[10px]"}
-                      md:w-[210px] w-[140px] min-w-[140px]
-                      aspect-[210/189]
+                      md:w-[210px] 2xl:w-[250px] w-[140px] min-w-[140px]
+                      max-md:h-auto max-md:h-[162px]
                     `}
                     style={{
                       backgroundColor: service.bgColor,
@@ -97,21 +97,20 @@ export default function Services() {
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-cover"
+                      className="object-contain object-bottom"
                       unoptimized
                     />
                   </div>
-
-                  <div className="md:w-[332px] w-full flex flex-col justify-center px-6 py-4 flex-1">
+                  <div className="md:w-[332px] 2xl:w-[390px] w-full flex flex-col justify-center px-6 py-4 flex-1">
                     <div className="flex items-center gap-2 mb-4">
                       <div className="w-3 h-3 bg-orange-400 rounded-full" />
-                      <h3 className="text-[var(--color-text)] text-[20px] font-semibold">
+                      <h3 className="text-[var(--color-text)] text-[20px] 2xl:text-[24px] font-semibold">
                         {service.title}
                       </h3>
                     </div>
                     <div className="flex items-start gap-5 ml-1">
                       <div className="w-2 bg-orange-400 h-full mt-1" />
-                      <p className="text-[var(--color-text)] text-[14px] leading-tight">
+                      <p className="text-[var(--color-text)] text-[14px] 2xl:text-[16px] leading-tight">
                         {service.text}
                       </p>
                     </div>

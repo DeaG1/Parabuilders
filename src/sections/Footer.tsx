@@ -35,7 +35,7 @@ const socialLinks: {
 export default function Footer() {
   return (
     <footer className="bg-[var(--color-footer)] text-white sm:pt-[60px] sm:pr-[0px] pr-[65px] pb-8 sm:px-[30px] px-[60px] xl:px-[50px]">
-      <div className="flex flex-col md:flex-row items-start border-b border-white/10 pb-12 gap-y-10 md:gap-y-10]">
+      <div className="flex flex-col md:flex-row items-start border-b border-white/10 pb-12 gap-y-10 md:gap-y-10">
         <div className="flex flex-col justify-between h-full min-w-[400px] max-w-[299px]">
           <div className="flex flex-col gap-6">
             <Image
@@ -48,7 +48,7 @@ export default function Footer() {
               dangerouslySetInnerHTML={{ __html: visionText }}
             />
           </div>
-          <div className="flex gap-6 mt-4 text-[24px]">
+          <div className="flex gap-2 mt-4 text-[24px]">
             {socialLinks.slice(0, 3).map(({ icon: Icon, href }, index) =>
               Icon ? (
                 <a
@@ -65,7 +65,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="w-full">
-        <div className="max-w-[1440px] mx-auto flex flex-col sm:flex-row md:flex-row gap-[40px] md:gap-[190px] sm:justify-start justify-center md:justify-start md:pl-[450px] 2xl:pl-[900px]">
+        <div className="max-w-[1440px] mx-auto flex flex-col sm:flex-row md:flex-row gap-[40px] max-md:gap-[120px] xl:gap-[180px] 2xl:gap-[180px] sm:justify-start justify-center md:justify-start md:pl-[450px] 2xl:pl-[900px]">
           {[{ title: "About", links: communityLinks },
             { title: "Socials", links: socialsLinks }].map((section, index) => (
             <div key={index} className="flex flex-col gap-7 w-[132px]">

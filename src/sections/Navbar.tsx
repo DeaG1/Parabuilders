@@ -162,7 +162,6 @@ export default function Navbar() {
             onClick={() => setIsMenuOpen(false)}
           />
         )}
-
         <div
           className={`md:hidden fixed top-0 right-0 h-screen w-[80%] max-w-[320px] bg-[var(--color-navbar)] px-6 py-6 z-[999] 
             transform transition-transform duration-300 ease-in-out shadow-lg
