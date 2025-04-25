@@ -5,13 +5,13 @@ import discordBannerDarkMode from "@/assets/images/discord/discordBannerDarkMode
 import discordBannerLightMode from "@/assets/images/discord/discordBannerLightMode.png";
 import discordBannerDarkModeMobile from "@/assets/images/discord/discordBannerDarkModeMobile.png";
 import discordBannerLightModeMobile from "@/assets/images/discord/discordBannerLightModeMobile.png";
-
-const titleLines = ["BECOME A", "CREATOR", "NOW"];
-const subtitle = "join our community on discord";
-const buttonText = "Enter Now";
+import { useLanguage } from "@/components/translations/LanguageContext";
 
 export default function Discord() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const { t } = useLanguage();
+  const discord = t("discord");
 
   useEffect(() => {
     const root = document.documentElement;
@@ -57,17 +57,17 @@ export default function Discord() {
           <div className="text-[var(--color-text)]">
           <h2 className="font-bold leading-tight mb-4 text-[63px] max-md:text-[26px]">
             <span className="hidden md:inline">
-              {titleLines.map((line, index) => (
+              {discord.titleLines.map((line, index) => (
                 <span key={index}>
                   {line}
-                  {index < titleLines.length - 1 && <br />}
+                  {index < discord.titleLines.length - 1 && <br />}
                 </span>
               ))}
             </span>
-            <span className="inline md:hidden">{titleLines.join(" ")}</span>
+            <span className="inline md:hidden">{discord.titleLines.join(" ")}</span>
           </h2>
             <p className="text-[var(--color-text)]/80 text-[20px] mb-6 max-md:text-[14px]">
-              {subtitle}
+              {discord.subtitle}
             </p>
             <a
               href="https://discord.gg/parabuilders"
@@ -81,7 +81,7 @@ export default function Discord() {
                          shadow-[0_9px_0_0_var(--color-button-shadow)]
                          active:translate-y-[2px] transition-all"
             >
-              {buttonText}
+              {discord.buttonText}
             </a>
           </div>
         </div>

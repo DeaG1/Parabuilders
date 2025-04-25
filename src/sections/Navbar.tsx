@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
-import logo from "@/assets/images/navbar/logoWithName.png";
+import logo from "@/assets/images/navbar/logoWithName.svg";
 import darkModeEarthIcon from "@/assets/images/navbar/darkModeEarthIcon.svg";
 import lightModeEarthIcon from "@/assets/images/navbar/lightModeEarthIcon.svg";
 import homeDarkModeAnimation from "@/assets/images/navbar/feathers/dark/home.svg";
@@ -13,56 +13,21 @@ import homeLightModeAnimation from "@/assets/images/navbar/feathers/light/home.s
 import resultsLightModeAnimation from "@/assets/images/navbar/feathers/light/results.svg";
 import servicesLightModeAnimation from "@/assets/images/navbar/feathers/light/services.svg";
 import socialMediaLightModeAnimation from "@/assets/images/navbar/feathers/light/socialMedia.svg";
+import { navbarTranslations } from "@/translations/navbar";
 import ThemeToggle from "@/components/ThemeToggle";
-
-const buttonText = "Social codorna";
-
-const navLinks = [
-  {
-    label: "Home",
-    href: "#home",
-    feather: {
-      light: homeLightModeAnimation,
-      dark: homeDarkModeAnimation,
-      width: 44,
-      height: 7,
-    },
-  },
-  {
-    label: "Results",
-    href: "#results",
-    feather: {
-      light: resultsLightModeAnimation,
-      dark: resultsDarkModeAnimation,
-      width: 55,
-      height: 7,
-    },
-  },
-  {
-    label: "Services",
-    href: "#services",
-    feather: {
-      light: servicesLightModeAnimation,
-      dark: servicesDarkModeAnimation,
-      width: 64,
-      height: 7,
-    },
-  },
-  {
-    label: "Social Media",
-    href: "#social-media",
-    feather: {
-      light: socialMediaLightModeAnimation,
-      dark: socialMediaDarkModeAnimation,
-      width: 94,
-      height: 7,
-    },
-  },
-];
+import LanguageToggle from "@/components/translations/LanguageToggle";
+import { useLanguage } from "@/components/translations/LanguageContext";
 
 export default function Navbar() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const [isClient, setIsClient] = useState(false);
+  const { lang, setLang } = useLanguage(); 
+
+useEffect(() => {
+  setIsClient(true);
+}, []);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -82,6 +47,53 @@ export default function Navbar() {
       document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
     }
   }, [isMenuOpen]);
+
+  if (!isClient) return null;
+
+  const t = navbarTranslations[lang];
+
+  const navLinks = [
+    {
+      label: t.home,
+      href: "#home",
+      feather: {
+        light: homeLightModeAnimation,
+        dark: homeDarkModeAnimation,
+        width: 44,
+        height: 7,
+      },
+    },
+    {
+      label: t.results,
+      href: "#results",
+      feather: {
+        light: resultsLightModeAnimation,
+        dark: resultsDarkModeAnimation,
+        width: 55,
+        height: 7,
+      },
+    },
+    {
+      label: t.services,
+      href: "#services",
+      feather: {
+        light: servicesLightModeAnimation,
+        dark: servicesDarkModeAnimation,
+        width: 64,
+        height: 7,
+      },
+    },
+    {
+      label: t.socialMedia,
+      href: "#social-media",
+      feather: {
+        light: socialMediaLightModeAnimation,
+        dark: socialMediaDarkModeAnimation,
+        width: 94,
+        height: 7,
+      },
+    },
+  ];
 
   return (
     <>
@@ -116,13 +128,7 @@ export default function Navbar() {
             <div className="h-5 border-r border-[var(--color-border)]" />
             <div className="flex items-center gap-5 text-[var(--color-text)] text-xl">
               <ThemeToggle />
-              <Image
-                src={isDarkMode ? darkModeEarthIcon : lightModeEarthIcon}
-                alt="Earth icon"
-                width={20}
-                height={20}
-                className="cursor-pointer hover:opacity-80 transition"
-              />
+              <LanguageToggle isDarkMode={isDarkMode} lang={lang} setLang={setLang} />
             </div>
             <button
               type="button"
@@ -137,9 +143,10 @@ export default function Navbar() {
                 transition-all
                 cursor-not-allowed opacity-50"
             >
-              {buttonText}
+              {t.buttonText}
             </button>
           </div>
+
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(true)}
@@ -156,12 +163,14 @@ export default function Navbar() {
             </button>
           </div>
         </div>
+
         {isMenuOpen && (
           <div
             className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[998] md:hidden"
             onClick={() => setIsMenuOpen(false)}
           />
         )}
+
         <div
           className={`md:hidden fixed top-0 right-0 h-screen w-[80%] max-w-[320px] bg-[var(--color-navbar)] px-6 py-6 z-[999] 
             transform transition-transform duration-300 ease-in-out shadow-lg
@@ -197,13 +206,7 @@ export default function Navbar() {
           </nav>
           <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between border-t border-[var(--color-border)] pt-4">
             <ThemeToggle />
-            <Image
-              src={isDarkMode ? darkModeEarthIcon : lightModeEarthIcon}
-              alt="Earth icon"
-              width={22}
-              height={22}
-              className="cursor-pointer hover:opacity-80 transition"
-            />
+            <LanguageToggle isDarkMode={isDarkMode} lang={lang} setLang={setLang} />
           </div>
         </div>
       </nav>

@@ -1,17 +1,13 @@
+"use client";
 import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
+import { useLanguage } from "@/components/translations/LanguageContext";
 import handMobile from "@/assets/images/contact/hand.png";
 
-const title = (
-  <>
-    Get in touch with our team and discover{" "}
-    <br className="hidden md:inline" />
-    how we can help your project thrive!
-  </>
-);
-const subtitle = "Contact with us";
-
 export default function Contact() {
+  const { t } = useLanguage();
+  const contact = t("contact");
+
   return (
     <section
       id="contact"
@@ -19,11 +15,12 @@ export default function Contact() {
     >
       <div className="w-full max-w-4xl text-center">
         <span className="text-[12px] text-[var(--color-contactWithUs)] bg-[var(--color-contact-background)] px-5 py-1 rounded-full tracking-wide">
-          {subtitle}
+          {contact.subtitle}
         </span>
-        <h2 className="text-[var(--color-text)] text-[30px] font-bold mt-4 mb-12 leading-snug">
-          {title}
-        </h2>
+        <h2
+          className="text-[var(--color-text)] text-[30px] font-bold mt-4 mb-12 leading-snug"
+          dangerouslySetInnerHTML={{ __html: contact.title }}
+        />
         <ContactForm />
         <div className="mt-2 md:hidden">
           <Image
@@ -31,7 +28,7 @@ export default function Contact() {
             alt="Hand illustration"
             width={130}
             height={130}
-            className=" absolute mx-auto left-[-20px]"
+            className="absolute mx-auto left-[-20px]"
             priority
           />
         </div>

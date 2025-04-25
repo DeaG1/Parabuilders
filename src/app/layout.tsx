@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { LanguageProvider } from "@/components/translations/LanguageContext";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -24,11 +25,13 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html>
             <body
                 className={`${inter.variable} font-sans antialiased bg-neutral-950 text-white overflow-x-hidden`}
                 >
+                <LanguageProvider>
                 {children}
+                </LanguageProvider>
             </body>
         </html>
     );

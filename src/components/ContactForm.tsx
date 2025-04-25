@@ -1,7 +1,11 @@
 "use client";
 import { FormEvent } from "react";
+import { useLanguage } from "@/components/translations/LanguageContext";
 
 export default function ContactForm() {
+  const { t } = useLanguage();
+  const contact = t("contact");
+
   const handleSend = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -25,21 +29,21 @@ export default function ContactForm() {
         <input
           name="name"
           type="text"
-          placeholder="Full name"
+          placeholder={contact.fullName}
           required
           className="flex-1 bg-[var(--color-contact-background)] text-[var(--color-text)] placeholder:text-[var(--color-text)]/60 px-6 py-4 rounded-full outline-none"
         />
         <input
           name="reason"
           type="text"
-          placeholder="About"
+          placeholder={contact.about}
           required
           className="flex-1 bg-[var(--color-contact-background)] text-[var(--color-text)] placeholder:text-[var(--color-text)]/60 px-6 py-4 rounded-full outline-none"
         />
       </div>
       <textarea
         name="message"
-        placeholder="Write a message"
+        placeholder={contact.messagePlaceholder}
         rows={5}
         required
         className="w-full bg-[var(--color-contact-background)] text-[var(--color-text)] text-[16px] placeholder:text-[var(--color-text)]/60 px-6 py-4 rounded-xl outline-none resize-none"
@@ -54,7 +58,7 @@ export default function ContactForm() {
                    shadow-[0_7px_0_0_var(--color-button-shadow)]
                    active:translate-y-[2px]"
       >
-        Send a message
+        {contact.buttonText}
       </button>
     </form>
   );
