@@ -39,7 +39,7 @@ export default function Home() {
 
   return (
     <>
-      {/* Mobile */}
+      {/* MOBILE */}
       <section className="relative md:hidden w-full bg-[var(--color-mobileBackground)] px-4 pt-10 pb-10 text-center text-[var(--color-text)] overflow-hidden min-h-[700px]">
         <video
           key={theme + "-mobile-video"}
@@ -54,6 +54,17 @@ export default function Home() {
             type="video/mp4"
           />
         </video>
+
+        <div className="absolute top-[40px] left-[20px] max-md:left-[7px] max-md:top-[330px] w-[40px] h-[40px] max-md:w-[20px] max-md:h-[20px] z-10">
+          <Image src={helmet} alt="Helmet" width={40} height={40} unoptimized />
+        </div>
+        <div className="absolute top-[150px] right-[20px] max-md:right-[5px] max-md:top-[380px] w-[40px] h-[40px] max-md:w-[20px] max-md:h-[20px] z-10 scale-x-[-1]">
+          <Image src={helmet} alt="Helmet" width={40} height={40} unoptimized />
+        </div>
+        <div className="absolute top-[220px] right-[10px] max-md:right-[18px] max-md:top-[410px] w-[40px] h-[40px] max-md:w-[20px] max-md:h-[20px] z-10 scale-x-[-1]">
+          <Image src={helmet} alt="Helmet" width={40} height={40} unoptimized />
+        </div>
+
         <div className="relative z-10">
           <p className="text-sm text-[var(--color-text)]/60 mb-4">{t.subtitles}</p>
           <h1
@@ -71,7 +82,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Desktop */}
+      {/* DESKTOP */}
       <section id="home" className="w-full text-[var(--color-text)] overflow-hidden relative aspect-[2880/1660] hidden md:block">
         <video
           key={theme}
@@ -86,7 +97,7 @@ export default function Home() {
             type="video/mp4"
           />
         </video>
-        {/* Helmets */}
+
         <div className="absolute top-[140px] left-[20px] 2xl:top-[220px] 2xl:left-[30px] w-[45px] h-[45px] z-20 transition-opacity duration-500">
           <Image key={theme} src={helmet} alt="Helmet" width={45} height={45} unoptimized />
         </div>
@@ -96,6 +107,7 @@ export default function Home() {
         <div className="absolute top-[370px] right-[10px] w-[45px] 2xl:top-[420px] h-[45px] z-20 scale-x-[-1] transition-opacity duration-500">
           <Image key={theme + "-2"} src={helmet} alt="Helmet" width={45} height={45} unoptimized />
         </div>
+
         <div className="relative z-20 w-full max-w-[1440px] mx-auto flex flex-col items-center text-center pt-20 px-4">
           <p className="text-[14px] text-[var(--color-text)]/60 mb-4">{t.subtitles}</p>
           <h1

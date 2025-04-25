@@ -47,7 +47,7 @@ export default function Footer() {
               dangerouslySetInnerHTML={{ __html: footer.visionText }}
             />
           </div>
-          <div className="flex gap-2 mt-4 text-[24px]">
+          <div className="flex gap-5 mt-4 text-[24px]">
             {socialLinks.slice(0, 3).map(({ icon: Icon, href }, index) =>
               Icon ? (
                 <a

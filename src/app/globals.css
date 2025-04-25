@@ -9,6 +9,7 @@
   --color-background: #ffffff;
   --color-mobileBackground: #ffffff;
   --color-navbar: #ffffff;
+  --color-navbar-text: #015186;
   --color-primary: #015186;
   --color-primary-rgb: 1, 81, 134;
   --color-accent: #7ec8f5;
@@ -23,6 +24,7 @@
   --color-button-shadow: var(--color-primary);
   --color-contactWithUs: #ff5800;
   --color-contact-background: #FFE0D0;
+  --color-black-white: #000000;
 }
 
 .dark {
@@ -32,6 +34,7 @@
   --color-background: #031f30;
   --color-mobileBackground: #021c29;
   --color-navbar: #01121a;
+  --color-navbar-text: #ffffff;
   --color-primary: #ff5800;
   --color-accent: #015186;
   --color-results-text: #000000;
@@ -45,6 +48,7 @@
   --color-button-shadow: var(--color-primary);
   --color-contactWithUs: #ff5800;
   --color-contact-background: #3B2C26;
+  --color-black-white: #ffffff;
 }
 
 html, body {
