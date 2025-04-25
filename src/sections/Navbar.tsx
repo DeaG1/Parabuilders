@@ -3,8 +3,6 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import logo from "@/assets/images/navbar/logoWithName.svg";
-import darkModeEarthIcon from "@/assets/images/navbar/darkModeEarthIcon.svg";
-import lightModeEarthIcon from "@/assets/images/navbar/lightModeEarthIcon.svg";
 import homeDarkModeAnimation from "@/assets/images/navbar/feathers/dark/home.svg";
 import resultsDarkModeAnimation from "@/assets/images/navbar/feathers/dark/results.svg";
 import servicesDarkModeAnimation from "@/assets/images/navbar/feathers/dark/services.svg";
