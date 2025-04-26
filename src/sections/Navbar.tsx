@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -16,25 +17,8 @@ export default function Navbar() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isClient, setIsClient] = useState(false);
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
   const { lang, setLang } = useLanguage();
   const t = navbarTranslations[lang];
-
-  useEffect(() => {
-    const observer = new MutationObserver(() => {
-      const updatedTheme = document.documentElement.classList.contains("light")
-        ? "light"
-        : "dark";
-      setTheme(updatedTheme);
-    });
-
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     setIsClient(true);
@@ -61,12 +45,11 @@ export default function Navbar() {
       <nav className="bg-[var(--color-navbar)] w-full py-4 relative z-50">
         <div className="w-full max-w-[1440px] mx-auto flex items-center justify-between px-6 md:px-[90px]">
           <Image
-            key={theme}
             src={logo}
             alt="Parabuilders logo"
             width={200}
             height={45}
-            className="object-contain opacity-0 animate-fade-in"
+            className="object-contain"
           />
 
           <div className="hidden md:flex items-center gap-[41px]">
@@ -75,17 +58,15 @@ export default function Navbar() {
             <div className="h-5 border-r border-[var(--color-border)]" />
 
             <div className="flex items-center gap-5 text-[var(--color-text)] text-xl">
-              <ThemeToggle 
-              key={theme}/>
+              <ThemeToggle />
               <LanguageToggle isDarkMode={isDarkMode} lang={lang} setLang={setLang} />
             </div>
 
             <BaseButton
-              key={theme}
               type="button"
               disabled
               title="Temporarily Unavailable"
-              className="px-5 py-2 text-[14px] font-medium opacity-0 animate-fade-in"
+              className="px-5 py-2 text-[14px] font-medium"
             >
               {t.buttonText}
             </BaseButton>
