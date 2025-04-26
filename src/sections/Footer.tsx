@@ -75,11 +75,15 @@ export default function Footer() {
                   );
 
                   const isAnchorLink = section.title === footer.aboutTitle;
+                  const href = isAnchorLink ? `#${link.toLowerCase()}` : matched?.href || "#";
+                  const isExternal = !isAnchorLink;
 
                   return (
                     <a
                       key={i}
-                      href={isAnchorLink ? `#${link.toLowerCase()}` : matched?.href || "#"}
+                      href={href}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noopener noreferrer" : undefined}
                       className="cursor-pointer hover:text-white/70 text-[16px]"
                     >
                       {link}

@@ -39,7 +39,6 @@ export default function Home() {
 
   return (
     <>
-      {/* MOBILE */}
       <section className="relative md:hidden w-full bg-[var(--color-mobileBackground)] px-4 pt-10 pb-10 text-center text-[var(--color-text)] overflow-hidden min-h-[700px]">
         <video
           key={theme + "-mobile-video"}
@@ -82,7 +81,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* DESKTOP */}
       <section id="home" className="w-full text-[var(--color-text)] overflow-hidden relative aspect-[2880/1660] hidden md:block">
         <video
           key={theme}
@@ -98,14 +96,35 @@ export default function Home() {
           />
         </video>
 
-        <div className="absolute top-[140px] left-[20px] 2xl:top-[220px] 2xl:left-[30px] w-[45px] h-[45px] z-20 transition-opacity duration-500">
-          <Image key={theme} src={helmet} alt="Helmet" width={45} height={45} unoptimized />
+        <div className="absolute top-[140px] left-[20px] 2xl:top-[220px] 2xl:left-[30px] w-[45px] h-[45px] z-20">
+          <Image 
+            key={theme}
+            src={helmet}
+            alt="Helmet"
+            width={45}
+            height={45}
+            unoptimized
+            className="opacity-0 animate-fade-in" />
         </div>
-        <div className="absolute top-[300px] right-[20px] 2xl:right-[60px] 2xl:top-[530px] w-[45px] h-[45px] z-20 scale-x-[-1] transition-opacity duration-500">
-          <Image key={theme + "-1"} src={helmet} alt="Helmet" width={45} height={45} unoptimized />
+        <div className="absolute top-[300px] right-[20px] 2xl:right-[60px] 2xl:top-[530px] w-[45px] h-[45px] z-20 scale-x-[-1]">
+          <Image 
+            key={theme + "-1"}
+            src={helmet}
+            alt="Helmet"
+            width={45}
+            height={45}
+            unoptimized
+            className="opacity-0 animate-fade-in" />
         </div>
-        <div className="absolute top-[370px] right-[10px] w-[45px] 2xl:top-[420px] h-[45px] z-20 scale-x-[-1] transition-opacity duration-500">
-          <Image key={theme + "-2"} src={helmet} alt="Helmet" width={45} height={45} unoptimized />
+        <div className="absolute top-[370px] right-[10px] w-[45px] 2xl:top-[420px] h-[45px] z-20 scale-x-[-1]">
+          <Image 
+             key={theme + "-2"}
+             src={helmet}
+             alt="Helmet"
+             width={45}
+             height={45}
+             unoptimized
+             className="opacity-0 animate-fade-in" />
         </div>
 
         <div className="relative z-20 w-full max-w-[1440px] mx-auto flex flex-col items-center text-center pt-20 px-4">
@@ -120,7 +139,10 @@ export default function Home() {
           <a
             key={theme}
             href="#contact"
-            className="mt-2 xl:mt-[-6px] 2xl:mt-[20px] w-[220px] h-[44px] bg-[var(--color-button-bg)] text-[var(--color-button-text)] border border-[var(--color-button-border)] shadow-[0_6px_0_0_var(--color-button-shadow)] text-[16px] font-semibold rounded-full active:translate-y-[2px] flex items-center justify-center"
+            className="mt-2 xl:mt-[-6px] 2xl:mt-[20px] w-[220px] h-[44px]
+             bg-[var(--color-button-bg)] text-[var(--color-button-text)]
+             border border-[var(--color-button-border)] shadow-[0_6px_0_0_var(--color-button-shadow)]
+             text-[16px] font-semibold rounded-full active:translate-y-[2px] flex items-center justify-center opacity-0 animate-fade-in"
           >
             {t.buttonText}
           </a>

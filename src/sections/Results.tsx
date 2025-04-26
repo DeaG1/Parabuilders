@@ -24,20 +24,36 @@ export default function Results() {
     return () => observer.disconnect();
   }, []);
 
+  const smoothScroll = (element: HTMLElement, amount: number, duration: number) => {
+    const start = element.scrollLeft;
+    const end = start + amount;
+    const startTime = performance.now();
+  
+    const animateScroll = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      element.scrollLeft = start + (end - start) * progress;
+      if (progress < 1) {
+        requestAnimationFrame(animateScroll);
+      }
+    };
+  
+    requestAnimationFrame(animateScroll);
+  };
+
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
     const scrollAmount = 360;
-    scrollRef.current.scrollBy({
-      left: direction === "left" ? -scrollAmount : scrollAmount,
-      behavior: "smooth",
-    });
+    const duration = 300; 
+    smoothScroll(scrollRef.current, direction === "left" ? -scrollAmount : scrollAmount, duration);
   };
 
   return (
     <section className="relative w-full bg-[var(--color-background)] text-[var(--color-text)] py-32 max-md:py-16 overflow-hidden">
-      <div className="absolute left-[-25px] top-[170px] 2xl:left[-50px] z-0 hidden md:block">
+      <div className="absolute left-[-25px] top-[170px] 2xl:left-[-50px] z-0 hidden md:block">
         <Image src={hand} alt="Hand" width={193} height={529} />
       </div>
+
       <div className="absolute right-[20px] max-md:right-[0] top-[10px] max-md:top-[140px] z-0">
         <Image
           src={isDarkMode ? whiteFootPrints : darkFootPrints}
@@ -47,7 +63,11 @@ export default function Results() {
           className="max-md:w-[125px] max-md:h-[234px] max-md:opacity-20"
         />
       </div>
-      <div id="results" className="relative z-10 text-center px-4 flex flex-col items-center gap-2 md:gap-3 max-w-[1440px] mx-auto">
+
+      <div
+        id="results"
+        className="relative z-10 text-center px-4 flex flex-col items-center gap-2 md:gap-3 max-w-[1440px] mx-auto"
+      >
         {results.title.map((line: string, i: number) => (
           <p key={i} className="text-2xl sm:text-3xl md:text-5xl xl:text-[48px] font-bold">
             {line}
@@ -55,7 +75,6 @@ export default function Results() {
         ))}
       </div>
 
-      {/* Desktop Cards */}
       <div className="relative z-10 mt-16 xl:mt-32 w-full">
         <div className="hidden md:flex flex-wrap justify-center gap-x-[28px] gap-y-7 w-[1440px] mx-auto">
           {results.cards.map((card, index) => (
@@ -74,30 +93,33 @@ export default function Results() {
         <div className="md:hidden mt-12 px-2">
           <div
             ref={scrollRef}
-            className="flex overflow-x-auto gap-24 no-scrollbar scroll-snap-x scroll-smooth snap-x px-6"
+            className="flex overflow-x-auto gap-24 no-scrollbar snap-x snap-mandatory scroll-smooth px-6 h-[200px]"
           >
             {results.cards.map((card, index) => (
               <div
                 key={index}
-                className="w-[clamp(280px,85vw,340px)] h-[150px] flex-shrink-0 relative snap-center"
+                className="w-[clamp(280px,85vw,340px)] h-[160px] flex-shrink-0 relative snap-center transition-transform duration-500 ease-in-out"
               >
-                <div className="absolute top-2 left-2 w-full h-full bg-[var(--color-button-shadow)] rounded-2xl z-0" />
-                <div className="relative bg-[var(--color-results-bg)] text-[var(--color-results-text)] rounded-xl p-6 h-full z-10 flex flex-col gap-3 shadow-lg">
-                  <h3 className="text-[24px] font-bold mb-0">{card.title}</h3>
-                  <p className="text-[14px] text-[var(--color-button-text)]/80">
-                    {card.description}
-                  </p>
+                <div className="relative w-full h-full">
+                  <div className="absolute inset-0 bg-[var(--color-button-shadow)] rounded-xl z-0 translate-x-[4px] translate-y-[4px]" />
+                  <div className="relative z-10 bg-[var(--color-results-bg)] text-[var(--color-results-text)] rounded-xl p-4 flex flex-col gap-2 shadow-lg w-full h-full overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+                    <h3 className="text-[20px] font-bold mb-0">{card.title}</h3>
+                    <p className="text-[14px] text-[var(--color-button-text)]/80 line-clamp-2">
+                      {card.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-          <div className="flex items-center justify-center gap-4 mt-8 px-6">
+
+          <div className="flex items-center justify-center gap-4 mt-8 px-3">
             <button onClick={() => scroll("left")} className="p-2 rounded-full bg-[var(--color-primary)]">
-              <ChevronLeft className="text-white w-5 h-5" />
+              <ChevronLeft className="text-white w-7 h-7" />
             </button>
             <div className="h-[1px] w-full bg-[var(--color-primary)] opacity-50" />
             <button onClick={() => scroll("right")} className="p-2 rounded-full bg-[var(--color-primary)]">
-              <ChevronRight className="text-white w-5 h-5" />
+              <ChevronRight className="text-white w-7 h-7" />
             </button>
           </div>
         </div>

@@ -76,7 +76,7 @@ export default function Services() {
                   </div>
                   <div className="md:w-[332px] 2xl:w-[390px] w-full flex flex-col justify-center px-6 py-4 flex-1">
                     <div className="flex items-center gap-2 mb-4">
-                      <div className="w-3 h-3 bg-orange-400 rounded-full" />
+                      <div className="w-3 h-3 bg-orange-400 rounded-full flex-none" />
                       <h3 className="text-[var(--color-text)] text-[20px] 2xl:text-[24px] font-semibold">
                         {card.title}
                       </h3>
