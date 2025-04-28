@@ -96,7 +96,7 @@ export default function Home() {
           />
         </video>
 
-        <div className="absolute top-[140px] left-[20px] 2xl:top-[220px] 2xl:left-[30px] w-[45px] h-[45px] z-20">
+        <div className="absolute top-[140px] left-[20px] 2xl:top-[190px] 2xl:left-[30px] w-[45px] h-[45px] z-20">
           <Image 
             key={theme}
             src={helmet}

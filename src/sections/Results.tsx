@@ -44,8 +44,11 @@ export default function Results() {
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
     const scrollAmount = 360;
-    const duration = 300; 
-    smoothScroll(scrollRef.current, direction === "left" ? -scrollAmount : scrollAmount, duration);
+  
+    scrollRef.current.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth"
+    });
   };
 
   return (

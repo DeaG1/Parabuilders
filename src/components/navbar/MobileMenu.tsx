@@ -36,7 +36,7 @@ export default function MobileMenu({
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const [isThemeDropdownOpen, setIsThemeDropdownOpen] = useState(false);
 
-  const inactiveBorderColor = isDarkMode ? "border-white/30" : "border-black/30";
+  const inactiveBorderColor = isDarkMode ? "border-white" : "border-black/30";
 
   return (
     <>
@@ -49,14 +49,19 @@ export default function MobileMenu({
 
       <div
         className={`md:hidden fixed top-0 right-0 h-screen w-full max-w-[430px]
-          ${isDarkMode 
-            ? "backdrop-blur-lg bg-[var(--color-navbar-bg)]/60" 
-            : "backdrop-blur-sm bg-[var(--color-navbar-bg)]"
+          ${isDarkMode
+            ? "backdrop-blur-lg"
+            : "backdrop-blur-md backdrop-saturate-100 backdrop-contrast-100"
           } 
           border-l border-white/10 px-3 py-6 z-[999]
           transform transition-transform duration-300 ease-in-out shadow-xl
           ${isOpen ? "translate-x-0" : "translate-x-full"}
           flex flex-col justify-between`}
+        style={{
+          backgroundColor: isDarkMode
+            ? "rgba(0, 0, 0, 0.4)"
+            : "rgba(255, 255, 255, 0.4)"
+        }}
       >
         <div>
           <div className="flex items-center justify-between mb-10">
