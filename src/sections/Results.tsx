@@ -24,27 +24,10 @@ export default function Results() {
     return () => observer.disconnect();
   }, []);
 
-  const smoothScroll = (element: HTMLElement, amount: number, duration: number) => {
-    const start = element.scrollLeft;
-    const end = start + amount;
-    const startTime = performance.now();
-  
-    const animateScroll = (currentTime: number) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      element.scrollLeft = start + (end - start) * progress;
-      if (progress < 1) {
-        requestAnimationFrame(animateScroll);
-      }
-    };
-  
-    requestAnimationFrame(animateScroll);
-  };
-
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
     const scrollAmount = 360;
-  
+
     scrollRef.current.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth"
