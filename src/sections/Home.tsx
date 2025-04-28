@@ -39,7 +39,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative md:hidden w-full bg-[var(--color-mobileBackground)] px-4 pt-10 pb-10 text-center text-[var(--color-text)] overflow-hidden min-h-[700px]">
+      <section className="relative md:hidden w-full bg-[var(--color-mobileBackground)] px-4 pt-6 pb-10 text-center text-[var(--color-text)] overflow-hidden min-h-[790px]">
         <video
           key={theme + "-mobile-video"}
           autoPlay
@@ -54,23 +54,23 @@ export default function Home() {
           />
         </video>
 
-        <div className="absolute top-[40px] left-[20px] max-md:left-[7px] max-md:top-[330px] w-[40px] h-[40px] max-md:w-[20px] max-md:h-[20px] z-10">
+        <div className="absolute top-[40px] left-[20px] max-md:left-[7px] max-md:top-[380px] w-[40px] h-[40px] max-md:w-[20px] max-md:h-[20px] z-10">
           <Image src={helmet} alt="Helmet" width={40} height={40} unoptimized />
         </div>
-        <div className="absolute top-[150px] right-[20px] max-md:right-[5px] max-md:top-[380px] w-[40px] h-[40px] max-md:w-[20px] max-md:h-[20px] z-10 scale-x-[-1]">
+        <div className="absolute top-[150px] right-[20px] max-md:right-[5px] max-md:top-[430px] w-[40px] h-[40px] max-md:w-[20px] max-md:h-[20px] z-10 scale-x-[-1]">
           <Image src={helmet} alt="Helmet" width={40} height={40} unoptimized />
         </div>
-        <div className="absolute top-[220px] right-[10px] max-md:right-[18px] max-md:top-[410px] w-[40px] h-[40px] max-md:w-[20px] max-md:h-[20px] z-10 scale-x-[-1]">
+        <div className="absolute top-[220px] right-[10px] max-md:right-[18px] max-md:top-[460px] w-[40px] h-[40px] max-md:w-[20px] max-md:h-[20px] z-10 scale-x-[-1]">
           <Image src={helmet} alt="Helmet" width={40} height={40} unoptimized />
         </div>
 
         <div className="relative z-10">
-          <p className="text-sm text-[var(--color-text)]/60 mb-4">{t.subtitles}</p>
+          <p className="text-sm text-[var(--color-text)]/60 mb-2">{t.subtitles}</p>
           <h1
-            className="text-2xl font-bold leading-snug mb-6"
+            className="text-[32px] font-bold leading-snug mb-4"
             dangerouslySetInnerHTML={{ __html: t.title }}
           />
-          <p className="text-sm text-[var(--color-text)]/60 mb-6">{t.description}</p>
+          <p className="text-[17px] text-[var(--color-text)]/60 mb-6">{t.description}</p>
           <a
             key={theme + "-mobile"}
             href="#contact"
@@ -96,7 +96,7 @@ export default function Home() {
           />
         </video>
 
-        <div className="absolute top-[140px] left-[20px] 2xl:top-[190px] 2xl:left-[30px] w-[45px] h-[45px] z-20">
+        <div className="absolute top-[140px] left-[20px] 2xl:top-[160px] 2xl:left-[30px] w-[45px] h-[45px] z-20">
           <Image 
             key={theme}
             src={helmet}

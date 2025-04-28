@@ -18,7 +18,7 @@ export default function Contact() {
           {contact.subtitle}
         </span>
         <h2
-          className="text-[var(--color-text)] text-[30px] font-bold mt-4 mb-12 leading-snug"
+          className="text-[var(--color-text)] text-[28px] font-bold mt-4 mb-12 max-md:mb-6 leading-snug"
           dangerouslySetInnerHTML={{ __html: contact.title }}
         />
         <ContactForm />

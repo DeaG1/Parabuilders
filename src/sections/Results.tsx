@@ -1,15 +1,15 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import whiteFootPrints from "@/assets/images/results/whiteFootprints.png";
 import darkFootPrints from "@/assets/images/results/darkFootprints.png";
 import hand from "@/assets/images/results/hand.png";
 import { useLanguage } from "@/components/translations/LanguageContext";
+import ScrollContainer from "@/components/results/ScrollContainer";
 
 export default function Results() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const scrollRef = useRef<HTMLDivElement>(null);
   const { t } = useLanguage();
   const results = t("results");
 
@@ -23,16 +23,6 @@ export default function Results() {
 
     return () => observer.disconnect();
   }, []);
-
-  const scroll = (direction: "left" | "right") => {
-    if (!scrollRef.current) return;
-    const scrollAmount = 360;
-
-    scrollRef.current.scrollBy({
-      left: direction === "left" ? -scrollAmount : scrollAmount,
-      behavior: "smooth"
-    });
-  };
 
   return (
     <section className="relative w-full bg-[var(--color-background)] text-[var(--color-text)] py-32 max-md:py-16 overflow-hidden">
@@ -77,17 +67,14 @@ export default function Results() {
         </div>
 
         <div className="md:hidden mt-12 px-2">
-          <div
-            ref={scrollRef}
-            className="flex overflow-x-auto gap-24 no-scrollbar snap-x snap-mandatory scroll-smooth px-6 h-[200px]"
-          >
+          <ScrollContainer>
             {results.cards.map((card, index) => (
               <div
                 key={index}
                 className="w-[clamp(280px,85vw,340px)] h-[160px] flex-shrink-0 relative snap-center transition-transform duration-500 ease-in-out"
               >
                 <div className="relative w-full h-full">
-                  <div className="absolute inset-0 bg-[var(--color-button-shadow)] rounded-xl z-0 translate-x-[4px] translate-y-[4px]" />
+                  <div className="absolute inset-0 bg-[var(--color-button-shadow)] rounded-xl z-0 translate-x-[10px] translate-y-[10px]" />
                   <div className="relative z-10 bg-[var(--color-results-bg)] text-[var(--color-results-text)] rounded-xl p-4 flex flex-col gap-2 shadow-lg w-full h-full overflow-hidden hover:scale-[1.02] transition-transform duration-300">
                     <h3 className="text-[20px] font-bold mb-0">{card.title}</h3>
                     <p className="text-[14px] text-[var(--color-button-text)]/80 line-clamp-2">
@@ -97,17 +84,7 @@ export default function Results() {
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="flex items-center justify-center gap-4 mt-8 px-3">
-            <button onClick={() => scroll("left")} className="p-2 rounded-full bg-[var(--color-primary)]">
-              <ChevronLeft className="text-white w-7 h-7" />
-            </button>
-            <div className="h-[1px] w-full bg-[var(--color-primary)] opacity-50" />
-            <button onClick={() => scroll("right")} className="p-2 rounded-full bg-[var(--color-primary)]">
-              <ChevronRight className="text-white w-7 h-7" />
-            </button>
-          </div>
+          </ScrollContainer>
         </div>
       </div>
     </section>

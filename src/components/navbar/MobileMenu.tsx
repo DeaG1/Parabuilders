@@ -51,7 +51,7 @@ export default function MobileMenu({
         className={`md:hidden fixed top-0 right-0 h-screen w-full max-w-[430px]
           ${isDarkMode
             ? "backdrop-blur-lg"
-            : "backdrop-blur-md backdrop-saturate-100 backdrop-contrast-100"
+            : "backdrop-blur-lg"
           } 
           border-l border-white/10 px-3 py-6 z-[999]
           transform transition-transform duration-300 ease-in-out shadow-xl
@@ -59,8 +59,8 @@ export default function MobileMenu({
           flex flex-col justify-between`}
         style={{
           backgroundColor: isDarkMode
-            ? "rgba(0, 0, 0, 0.4)"
-            : "rgba(255, 255, 255, 0.4)"
+            ? "rgba(0, 0, 0, 0.3)"
+            : "rgba(255, 255, 255, 0.8)"
         }}
       >
         <div>

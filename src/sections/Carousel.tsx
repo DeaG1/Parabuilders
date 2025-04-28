@@ -75,6 +75,19 @@ const logos = [
 export default function Carousel() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+  
+    checkMobile();
+  
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   useEffect(() => {
     const root = document.documentElement;
 
@@ -96,7 +109,7 @@ export default function Carousel() {
 
   return (
     <div
-      className="relative w-full overflow-hidden py-12"
+      className="relative w-full overflow-hidden py-12 max-md:py-8"
       style={{
         background: backgroundStyle,
       }}
@@ -105,10 +118,10 @@ export default function Carousel() {
       {[...logos, ...logos].map((logo, index) => (
           <div
             key={`${logo.alt}-${index}`}
-            className="group relative flex items-center justify-center mx-28"
+            className="group relative flex items-center justify-center mx-28 max-md:mx-24"
             style={{
-              width: logo.width,
-              height: logo.height,
+              width: isMobile ? logo.width * 0.67 : logo.width,
+              height: isMobile ? logo.height * 0.67 : logo.height,
               transform: `translateY(${logo.offsetY ?? 0}px)`,
               marginLeft: logo.offsetX ?? 0,
             }}

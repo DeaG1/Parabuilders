@@ -42,13 +42,13 @@ export default function Services() {
           return (
             <div
               key={index}
-              className={`w-full flex ${isLeft ? "justify-start" : "justify-end"} max-md:justify-center`}
+              className={`w-full flex ${isLeft ? "justify-start" : "justify-end"}`}
             >
               <MotionServiceCard isLeft={isLeft}>
                 <div
                   className={`
                     relative flex overflow-hidden border-2 rounded-[16px]
-                    ${isLeft ? "flex-row" : "flex-row-reverse"} max-md:flex-row
+                    ${isLeft ? "flex-row" : "flex-row-reverse"}
                     min-h-[189px] md:w-[542px] 2xl:w-[640px] 2xl:min-h-[220px] w-full
                   `}
                   style={{
