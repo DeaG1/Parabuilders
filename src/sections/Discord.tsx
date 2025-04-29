@@ -57,7 +57,8 @@ export default function Discord() {
           />
         </FadeImage>
 
-        <div className="absolute inset-0 flex items-center justify-start px-12 max-md:px-6 max-md:pt-[370px] max-md:items-center max-md:justify-center text-center">
+        <div className="absolute inset-0 flex items-center justify-start px-12 text-center 
+          max-md:px-4 max-md:items-end max-md:justify-center max-md:pb-6">
           <div className="text-[var(--color-text)]">
             <FadeUp>
               <h2 className="font-bold leading-tight mb-4 text-[63px] max-md:text-[26px]">

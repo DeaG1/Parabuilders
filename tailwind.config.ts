@@ -20,7 +20,8 @@ const config: Config = {
       sans: ["var(--font-inter)", "sans-serif"],
     },
     screens: {
-      sm: "375px",
+      xxs: "340px",
+      sm: "400px",
       md: "768px",
       lg: "1200px",
       xl: "1440px",

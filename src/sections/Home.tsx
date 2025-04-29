@@ -48,7 +48,7 @@ export default function Home({ onReady }: HomeProps) {
 
   return (
     <>
-      <section className="relative md:hidden w-full bg-[var(--color-mobileBackground)] px-4 pt-6 pb-10 text-center text-[var(--color-text)] overflow-hidden min-h-[790px]">
+      <section className="relative md:hidden w-full bg-[var(--color-mobileBackground)] px-4 pt-6 pb-10 text-center text-[var(--color-text)] overflow-hidden min-h-[790px] max-sm:min-h-[830px] max-sm:min-w-[360px]">
         <video
           key={theme + "-mobile-video"}
           autoPlay
