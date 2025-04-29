@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
@@ -74,18 +75,16 @@ const logos = [
 
 export default function Carousel() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-  
+
     checkMobile();
-  
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   useEffect(() => {
@@ -110,12 +109,10 @@ export default function Carousel() {
   return (
     <div
       className="relative w-full overflow-hidden py-12 max-md:py-8"
-      style={{
-        background: backgroundStyle,
-      }}
+      style={{ background: backgroundStyle }}
     >
       <Marquee speed={60} gradient={false} className="gap-16 px-8">
-      {[...logos, ...logos].map((logo, index) => (
+        {[...logos, ...logos].map((logo, index) => (
           <div
             key={`${logo.alt}-${index}`}
             className="group relative flex items-center justify-center mx-28 max-md:mx-24"

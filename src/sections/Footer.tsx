@@ -1,5 +1,7 @@
 "use client";
+
 import Image from "next/image";
+import { useEffect } from "react";
 import { useLanguage } from "@/components/translations/LanguageContext";
 import logoParabuilders from "@/assets/images/footer/logo.svg";
 import triadLogo from "@/assets/images/footer/triadLogo.png";
@@ -63,6 +65,7 @@ export default function Footer() {
             )}
           </div>
         </div>
+
         <div className="w-full">
           <div className="max-w-[1440px] mx-auto flex flex-col sm:flex-row md:flex-row gap-[40px] max-md:gap-[120px] xl:gap-[180px] 2xl:gap-[180px] sm:justify-start justify-center md:justify-start md:pl-[450px] 2xl:pl-[900px]">
             {[{ title: footer.aboutTitle, links: footer.communityLinks },
@@ -95,6 +98,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
       <div className="flex flex-col md:flex-row justify-between items-center pt-8 text-[18px] text-white/60 gap-4">
         <span>{footer.footerBottomText}</span>
         <div className="flex items-center gap-1">

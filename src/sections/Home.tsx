@@ -9,7 +9,11 @@ import BackgroundVideo from "@/components/home/BackgroundVideo";
 import helmet from "@/assets/images/home/helmet.gif";
 import { homeTranslations } from "@/translations/home";
 
-export default function Home() {
+interface HomeProps {
+  onReady: () => void;
+}
+
+export default function Home({ onReady }: HomeProps) {
   const [isClient, setIsClient] = useState(false);
   const [theme, setTheme] = useState<"light" | "dark">("dark");
   const { lang } = useLanguage();
@@ -17,6 +21,7 @@ export default function Home() {
 
   useEffect(() => {
     setIsClient(true);
+    onReady();
     const currentTheme = document.documentElement.classList.contains("light")
       ? "light"
       : "dark";
@@ -162,7 +167,7 @@ export default function Home() {
               className="mt-2 xl:mt-[-6px] 2xl:mt-[20px] w-[220px] h-[44px]
               bg-[var(--color-button-bg)] text-[var(--color-button-text)]
               border border-[var(--color-button-border)] shadow-[0_6px_0_0_var(--color-button-shadow)]
-              text-[16px] font-semibold rounded-full active:translate-y-[2px] flex items-center justify-center"
+              text-[16px] font-semibold rounded-full active:translate-y-[2px] flex items-center justify-center opacity-0 animate-fade-in"
             >
               {t.buttonText}
             </a>

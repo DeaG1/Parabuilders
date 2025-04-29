@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
 import { useLanguage } from "@/components/translations/LanguageContext";
