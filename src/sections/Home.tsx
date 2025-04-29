@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import helmet from "@/assets/images/home/helmet.gif";
 import { useLanguage } from "@/components/translations/LanguageContext";
+import BackgroundVideo from "@/components/home/BackgroundVideo";
 import { homeTranslations } from "@/translations/home";
 
 export default function Home() {
@@ -46,6 +47,7 @@ export default function Home() {
           muted
           loop
           playsInline
+          preload="auto"
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
         >
           <source
@@ -82,19 +84,11 @@ export default function Home() {
       </section>
 
       <section id="home" className="w-full text-[var(--color-text)] overflow-hidden relative aspect-[2880/1660] hidden md:block">
-        <video
-          key={theme}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-0 animate-fade-in"
-        >
-          <source
-            src={`/${theme === "dark" ? "darkBackground.mp4" : "lightBackground.mp4"}`}
-            type="video/mp4"
-          />
-        </video>
+      <BackgroundVideo 
+        src={`/${theme === "dark" ? "darkBackground.mp4" : "lightBackground.mp4"}`}
+        themeKey={theme}
+        className="opacity-0 animate-fade-in"
+      />
 
         <div className="absolute top-[140px] left-[20px] 2xl:top-[160px] 2xl:left-[30px] w-[45px] h-[45px] z-20">
           <Image 

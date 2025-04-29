@@ -77,10 +77,7 @@ export default function ScrollContainer({ children }: ScrollContainerProps) {
     const nearestIndex = Math.round(currentScroll / scrollStep);
     const targetScroll = nearestIndex * scrollStep;
 
-    element.scrollTo({
-      left: targetScroll,
-      behavior: "smooth",
-    });
+    element.scrollLeft = targetScroll;
   };
 
   return (
