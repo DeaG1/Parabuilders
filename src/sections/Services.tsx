@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { useEffect } from "react";
 import MotionServiceCard from "@/components/motions/motionServiceCards";
 import { useLanguage } from "@/components/translations/LanguageContext";
 import { servicesTranslations } from "@/translations/services";

@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect } from "react";
 import { useLanguage } from "@/components/translations/LanguageContext";
 import logoParabuilders from "@/assets/images/footer/logo.svg";
 import triadLogo from "@/assets/images/footer/triadLogo.png";

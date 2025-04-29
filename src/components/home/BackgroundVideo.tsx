@@ -29,7 +29,7 @@ export default function BackgroundVideo({ src, poster, className = "", themeKey 
         .then(() => {
           video.controls = false;
         })
-        .catch((error) => {
+        .catch(() => {
           video.controls = false;
           attempts++;
           setTimeout(tryPlay, retryDelay);

@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-
 import logo from "@/assets/images/navbar/logoWithName.svg";
 import { navbarTranslations } from "@/translations/navbar";
 import ThemeToggle from "@/components/ThemeToggle";

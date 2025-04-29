@@ -48,61 +48,67 @@ export default function Home({ onReady }: HomeProps) {
 
   return (
     <>
-      <section className="relative md:hidden w-full bg-[var(--color-mobileBackground)] px-4 pt-6 pb-10 text-center text-[var(--color-text)] overflow-hidden min-h-[790px] max-sm:min-h-[830px] max-sm:min-w-[360px]">
-        <video
-          key={theme + "-mobile-video"}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        >
-          <source
-            src={`/${theme === "dark" ? "darkBackgroundMobile.mp4" : "lightBackgroundMobile.mp4"}`}
-            type="video/mp4"
-          />
-        </video>
-        <FadeImage>
-          <div className="absolute top-[40px] left-[20px] max-md:left-[7px] max-md:top-[380px] w-[40px] h-[40px] max-md:w-[20px] max-md:h-[20px] z-10">
-            <Image src={helmet} alt="Helmet" width={40} height={40} unoptimized />
-          </div>
-        </FadeImage>
-        <FadeImage>
-          <div className="absolute top-[150px] right-[20px] max-md:right-[5px] max-md:top-[430px] w-[40px] h-[40px] max-md:w-[20px] max-md:h-[20px] z-10 scale-x-[-1]">
-            <Image src={helmet} alt="Helmet" width={40} height={40} unoptimized />
-          </div>
-        </FadeImage>
-        <FadeImage>
-          <div className="absolute top-[220px] right-[10px] max-md:right-[18px] max-md:top-[460px] w-[40px] h-[40px] max-md:w-[20px] max-md:h-[20px] z-10 scale-x-[-1]">
-            <Image src={helmet} alt="Helmet" width={40} height={40} unoptimized />
-          </div>
-        </FadeImage>
-        <div className="relative z-10">
-          <FadeUp>
-            <p className="text-sm text-[var(--color-text)]/60 mb-2">{t.subtitles}</p>
-          </FadeUp>
-          <FadeUp>
-            <h1
-              className="text-[32px] font-bold leading-snug mb-4"
-              dangerouslySetInnerHTML={{ __html: t.title }}
-            />
-          </FadeUp>
+      <section className="relative md:hidden w-full bg-[var(--color-mobileBackground)] px-4 pt-6 pb-10 text-center text-[var(--color-text)] overflow-hidden min-h-screen">
+  <video
+    key={theme + "-mobile-video"}
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="auto"
+    className="absolute top-0 left-0 w-full h-full object-cover z-0"
+  >
+    <source
+      src={`/${theme === "dark" ? "darkBackgroundMobile.mp4" : "lightBackgroundMobile.mp4"}`}
+      type="video/mp4"
+    />
+  </video>
 
-          <FadeUp>
-            <p className="text-[17px] text-[var(--color-text)]/60 mb-6">{t.description}</p>
-          </FadeUp>
-          <FadeUp>
-            <a
-              key={theme + "-mobile"}
-              href="#contact"
-              className="w-full h-[44px] bg-[var(--color-button-bg)] text-[var(--color-button-text)] border border-[var(--color-button-border)] shadow-[0_6px_0_0_var(--color-button-shadow)] text-sm font-semibold rounded-full active:translate-y-[2px] flex items-center justify-center"
-            >
-              {t.buttonText}
-            </a>
-          </FadeUp>
-        </div>
-      </section>
+  <div className="absolute top-[10vh] left-[5vw] w-[10vw] h-[10vw] z-10">
+    <FadeImage>
+      <Image src={helmet} alt="Helmet" fill className="object-contain" unoptimized />
+    </FadeImage>
+  </div>
+
+  <div className="absolute top-[25vh] right-[5vw] w-[10vw] h-[10vw] z-10 scale-x-[-1]">
+    <FadeImage>
+      <Image src={helmet} alt="Helmet" fill className="object-contain" unoptimized />
+    </FadeImage>
+  </div>
+
+  <div className="absolute top-[33vh] right-[10vw] w-[10vw] h-[10vw] z-10 scale-x-[-1]">
+    <FadeImage>
+      <Image src={helmet} alt="Helmet" fill className="object-contain" unoptimized />
+    </FadeImage>
+  </div>
+
+  <div className="relative z-10 mt-10 flex flex-col items-center px-2">
+    <FadeUp>
+      <p className="text-sm text-[var(--color-text)]/60 mb-2">{t.subtitles}</p>
+    </FadeUp>
+
+    <FadeUp>
+      <h1
+        className="text-[32px] font-bold leading-snug mb-4"
+        dangerouslySetInnerHTML={{ __html: t.title }}
+      />
+    </FadeUp>
+
+    <FadeUp>
+      <p className="text-[17px] text-[var(--color-text)]/60 mb-6">{t.description}</p>
+    </FadeUp>
+
+    <FadeUp>
+      <a
+        key={theme + "-mobile"}
+        href="#contact"
+        className="w-full h-[44px] bg-[var(--color-button-bg)] text-[var(--color-button-text)] border border-[var(--color-button-border)] shadow-[0_6px_0_0_var(--color-button-shadow)] text-sm font-semibold rounded-full active:translate-y-[2px] flex items-center justify-center"
+      >
+        {t.buttonText}
+      </a>
+    </FadeUp>
+  </div>
+</section>
       <section id="home" className="w-full text-[var(--color-text)] overflow-hidden relative aspect-[2880/1660] hidden md:block">
         <BackgroundVideo 
           src={`/${theme === "dark" ? "darkBackground.mp4" : "lightBackground.mp4"}`}
