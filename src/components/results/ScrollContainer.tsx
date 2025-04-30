@@ -47,21 +47,6 @@ export default function ScrollContainer({ children }: ScrollContainerProps) {
     }, 600);
   };
 
-  const snapToNearestCard = () => {
-    if (!scrollRef.current) return;
-
-    const element = scrollRef.current;
-    const cardWidth = 340;
-    const gap = 96;
-    const scrollStep = cardWidth + gap;
-
-    const currentScroll = element.scrollLeft;
-    const nearestIndex = Math.round(currentScroll / scrollStep);
-    const targetScroll = nearestIndex * scrollStep;
-
-    element.scrollLeft = targetScroll;
-  };
-
   return (
     <>
       <div
