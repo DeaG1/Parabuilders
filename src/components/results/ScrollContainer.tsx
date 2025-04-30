@@ -31,38 +31,20 @@ export default function ScrollContainer({ children }: ScrollContainerProps) {
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
-
+  
     const element = scrollRef.current;
     const cardWidth = 340;
     const gap = 96;
     const scrollStep = cardWidth + gap;
-
-    const start = element.scrollLeft;
-    const change = direction === "left" ? -scrollStep : scrollStep;
-    const duration = 500;
-
-    let startTime: number | null = null;
-
-    const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
-
-    const animateScroll = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const elapsed = timestamp - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-
-      const ease = easeOutCubic(progress);
-
-      element.scrollLeft = start + change * ease;
-
-      if (progress < 1) {
-        requestAnimationFrame(animateScroll);
-      } else {
-        snapToNearestCard();
-        checkScrollPosition();
-      }
-    };
-
-    requestAnimationFrame(animateScroll);
+  
+    element.scrollBy({
+      left: direction === "left" ? -scrollStep : scrollStep,
+      behavior: "smooth",
+    });
+  
+    setTimeout(() => {
+      checkScrollPosition();
+    }, 600);
   };
 
   const snapToNearestCard = () => {
