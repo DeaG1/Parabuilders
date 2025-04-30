@@ -82,8 +82,8 @@ export default function Results() {
             {results.cards.map((card, index) => (
               <div
                 key={index}
-                className="w-[clamp(280px,85vw,340px)] h-[160px] flex-shrink-0 relative snap-center transition-transform duration-500 ease-in-out"
-              >
+                className="w-[calc(100vw-3rem)] max-w-[340px] h-[160px] flex-shrink-0 relative snap-center transition-transform duration-500 ease-in-out"
+                >
                 <div className="relative w-full h-full">
                   <div className="absolute inset-0 bg-[var(--color-button-shadow)] rounded-xl z-0 translate-x-[10px] translate-y-[10px]" />
                   <div className="relative z-10 bg-[var(--color-results-bg)] text-[var(--color-results-text)] rounded-xl p-4 flex flex-col gap-2 shadow-lg w-full h-full overflow-hidden hover:scale-[1.02] transition-transform duration-300">

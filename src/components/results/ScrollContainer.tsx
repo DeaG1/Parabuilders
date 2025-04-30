@@ -12,15 +12,31 @@ export default function ScrollContainer({ children }: ScrollContainerProps) {
   const [isAtStart, setIsAtStart] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
 
-  const cardWidth = 340;
-  const gap = 96;
-  const scrollStep = cardWidth + gap;
+  const getScrollStep = () => {
+    if (!scrollRef.current || scrollRef.current.children.length === 0) return 0;
+
+    const firstCard = scrollRef.current.children[0] as HTMLElement;
+    const container = scrollRef.current;
+    const cardWidth = firstCard.offsetWidth;
+
+    // gap-24 = 6rem = 96px no Tailwind, mas vamos pegar dinamicamente
+    const containerStyle = window.getComputedStyle(container);
+    const gap = parseInt(containerStyle.columnGap || containerStyle.gap || "0");
+
+    return cardWidth + gap;
+  };
 
   const checkScrollPosition = () => {
     if (!scrollRef.current) return;
-    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-    setIsAtStart(scrollLeft <= 10);
-    setIsAtEnd(scrollLeft + clientWidth >= scrollWidth - 10);
+    const element = scrollRef.current;
+    const scrollStep = getScrollStep();
+
+    const currentScroll = element.scrollLeft;
+    const currentIndex = Math.round(currentScroll / scrollStep);
+    const totalCards = element.children.length;
+
+    setIsAtStart(currentIndex <= 0);
+    setIsAtEnd(currentIndex >= totalCards - 1);
   };
 
   useEffect(() => {
@@ -36,6 +52,7 @@ export default function ScrollContainer({ children }: ScrollContainerProps) {
     if (!scrollRef.current) return;
     const element = scrollRef.current;
 
+    const scrollStep = getScrollStep();
     const currentScroll = element.scrollLeft;
     const currentIndex = Math.round(currentScroll / scrollStep);
     const nextIndex = direction === "left" ? currentIndex - 1 : currentIndex + 1;
