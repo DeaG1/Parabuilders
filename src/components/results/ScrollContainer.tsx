@@ -12,6 +12,10 @@ export default function ScrollContainer({ children }: ScrollContainerProps) {
   const [isAtStart, setIsAtStart] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
 
+  const cardWidth = 340;
+  const gap = 96;
+  const scrollStep = cardWidth + gap;
+
   const checkScrollPosition = () => {
     if (!scrollRef.current) return;
     const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
@@ -23,7 +27,6 @@ export default function ScrollContainer({ children }: ScrollContainerProps) {
     checkScrollPosition();
     const scroller = scrollRef.current;
     scroller?.addEventListener("scroll", checkScrollPosition);
-
     return () => {
       scroller?.removeEventListener("scroll", checkScrollPosition);
     };
@@ -31,27 +34,29 @@ export default function ScrollContainer({ children }: ScrollContainerProps) {
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
-  
     const element = scrollRef.current;
-    const cardWidth = 340;
-    const gap = 96;
-    const scrollStep = cardWidth + gap;
-  
-    element.scrollBy({
-      left: direction === "left" ? -scrollStep : scrollStep,
+
+    const currentScroll = element.scrollLeft;
+    const currentIndex = Math.round(currentScroll / scrollStep);
+    const nextIndex = direction === "left" ? currentIndex - 1 : currentIndex + 1;
+
+    const targetScroll = nextIndex * scrollStep;
+
+    element.scrollTo({
+      left: targetScroll,
       behavior: "smooth",
     });
-  
+
     setTimeout(() => {
       checkScrollPosition();
-    }, 600);
+    }, 500);
   };
 
   return (
     <>
       <div
         ref={scrollRef}
-        className="flex overflow-x-auto gap-24 no-scrollbar snap-x snap-mandatory scroll-smooth px-6 h-[200px]"
+        className="flex overflow-x-auto gap-24 no-scrollbar snap-x snap-mandatory scroll-smooth px-6 h-[200px] touch-pan-x"
       >
         {children}
       </div>
